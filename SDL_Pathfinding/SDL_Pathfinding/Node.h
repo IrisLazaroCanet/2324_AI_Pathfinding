@@ -18,7 +18,7 @@ class Node
 {
 private:
 	Vector2D cell;
-	float heuristic;
+	float heuristic;	//Assignat per HC singleton en escollir un algorisme
 
 public:
 	Node(Vector2D _cell) { cell = _cell; }
