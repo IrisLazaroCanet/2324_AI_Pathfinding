@@ -5,6 +5,8 @@
 #include "SDL_SimpleApp.h"
 #include "ScenePathFindingMouse.h"
 
+#include "HeuristicCalculator.h"
+
 using namespace std;
 
 
@@ -49,9 +51,15 @@ int main(int argc, char ** argv)
 			}
 			if (event.key.keysym.scancode == SDL_SCANCODE_2)
 			{
+				//TODO: Remove this test
+				HC->SetFunctionToOctile();
+				HC->CalculateHeuristic({1.f, 1.f}, {2.f, 2.f});
 			}
 			if (event.key.keysym.scancode == SDL_SCANCODE_3)
 			{
+				//TODO: Remove this test
+				HC->SetFunctionToDiagonal();
+				HC->CalculateHeuristic({ 1.f, 1.f }, { 2.f, 2.f });
 			}
 			if ((event.key.keysym.scancode == SDL_SCANCODE_Q) || (event.key.keysym.scancode == SDL_SCANCODE_ESCAPE))
 			{

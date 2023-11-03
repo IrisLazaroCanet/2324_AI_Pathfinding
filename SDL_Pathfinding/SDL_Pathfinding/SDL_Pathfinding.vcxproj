@@ -132,8 +132,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="ChebyshevDistance.cpp" />
+    <ClCompile Include="DiagonalDistance.cpp" />
+    <ClCompile Include="EuclideanDistance.cpp" />
     <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="HeuristicCalculator.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ManhattanDistance.cpp" />
+    <ClCompile Include="OctileDistance.cpp" />
     <ClCompile Include="PathFollowing.cpp" />
     <ClCompile Include="ScenePathFindingMouse.cpp" />
     <ClCompile Include="SDL_SimpleApp.cpp" />
@@ -142,7 +148,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="ChebyshevDistance.h" />
+    <ClInclude Include="DiagonalDistance.h" />
+    <ClInclude Include="EuclideanDistance.h" />
     <ClInclude Include="Grid.h" />
+    <ClInclude Include="HeuristicCalculator.h" />
+    <ClInclude Include="HeuristicFunction.h" />
+    <ClInclude Include="ManhattanDistance.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="OctileDistance.h" />
     <ClInclude Include="Path.h" />
     <ClInclude Include="PathFollowing.h" />
     <ClInclude Include="Scene.h" />
