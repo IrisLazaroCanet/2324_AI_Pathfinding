@@ -132,6 +132,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="FileSerializer.cpp" />
     <ClCompile Include="PathCalculator.cpp" />
     <ClCompile Include="AStarAlgorithm.cpp" />
     <ClCompile Include="BFSAlgorithm.cpp" />
@@ -157,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="FileSerializer.h" />
     <ClInclude Include="PathCalculator.h" />
     <ClInclude Include="AStarAlgorithm.h" />
     <ClInclude Include="BFSAlgorithm.h" />

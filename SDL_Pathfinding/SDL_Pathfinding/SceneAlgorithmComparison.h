@@ -9,6 +9,7 @@
 #include "Grid.h"
 #include "Graph.h"
 #include "PathfindingProblem.h"
+#include "FileSerializer.h"
 
 class ScenePathfindingComparison : public Scene
 {

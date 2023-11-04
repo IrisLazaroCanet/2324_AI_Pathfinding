@@ -78,5 +78,8 @@ void ScenePathfindingComparison::SolveProblems()
 
 void ScenePathfindingComparison::SaveResultsToFile()
 {
-	//TODO: Save data in file (call a FileSerializer singleton)
+	for (int i = 0; i < (int)problemInstances.size(); i++)
+	{
+		FS->WriteMapToBinaryFile("problem_results.txt", problemInstances[i]->GetExploredNodes());
+	}
 }
