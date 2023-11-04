@@ -4,6 +4,7 @@
 
 #include "SDL_SimpleApp.h"
 #include "ScenePathFindingMouse.h"
+#include "ScenePathfindingAlgorithms.h"
 
 #include "HeuristicCalculator.h"
 #include "PathCalculator.h"
@@ -52,21 +53,15 @@ int main(int argc, char ** argv)
 			}
 			if (event.key.keysym.scancode == SDL_SCANCODE_2)
 			{
-				//TODO: Remove this test
-				HC->SetFunctionToOctile();
-				HC->CalculateHeuristic({1.f, 1.f}, {2.f, 2.f});
-
-				PC->SetAlgorithmToDijkstra();
-				PC->FindPath(new Graph(), new Node(), new Node());
+				delete(curr_scene);
+				curr_scene = new ScenePathfindingAlgorithms;
+				app->setWindowTitle(curr_scene->getTitle());
 			}
 			if (event.key.keysym.scancode == SDL_SCANCODE_3)
 			{
 				//TODO: Remove this test
 				HC->SetFunctionToDiagonal();
 				HC->CalculateHeuristic({ 1.f, 1.f }, { 2.f, 2.f });
-
-				PC->SetAlgorithmToGreedy();
-				PC->FindPath(new Graph(), new Node(), new Node());
 			}
 			if ((event.key.keysym.scancode == SDL_SCANCODE_Q) || (event.key.keysym.scancode == SDL_SCANCODE_ESCAPE))
 			{

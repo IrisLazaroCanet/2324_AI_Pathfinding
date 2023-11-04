@@ -32,5 +32,5 @@ public:
 	void SetAlgorithmToBFS();
 	void SetAlgorithmToDijkstra();
 	void SetAlgorithmToGreedy();
-	void SetAlgorithToAStar();
+	void SetAlgorithmToAStar();
 };

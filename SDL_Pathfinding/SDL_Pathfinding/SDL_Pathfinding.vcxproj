@@ -147,6 +147,7 @@
     <ClCompile Include="ManhattanDistance.cpp" />
     <ClCompile Include="OctileDistance.cpp" />
     <ClCompile Include="PathFollowing.cpp" />
+    <ClCompile Include="ScenePathfindingAlgorithms.cpp" />
     <ClCompile Include="ScenePathFindingMouse.cpp" />
     <ClCompile Include="SDL_SimpleApp.cpp" />
     <ClCompile Include="Seek.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="PathfindingAlgorithm.h" />
     <ClInclude Include="PathFollowing.h" />
     <ClInclude Include="Scene.h" />
+    <ClInclude Include="ScenePathfindingAlgorithms.h" />
     <ClInclude Include="ScenePathFindingMouse.h" />
     <ClInclude Include="SDL_SimpleApp.h" />
     <ClInclude Include="Seek.h" />

@@ -42,7 +42,7 @@ void PathCalculator::SetAlgorithmToGreedy()
     currentAlgorithmKey = GREEDY_KEY;
 }
 
-void PathCalculator::SetAlgorithToAStar()
+void PathCalculator::SetAlgorithmToAStar()
 {
     currentAlgorithmKey = ASTAR_KEY;
 }
