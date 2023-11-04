@@ -21,6 +21,7 @@ private:
 	float heuristic;	//Assignat per HC singleton en escollir un algorisme
 
 public:
+	Node() { }
 	Node(Vector2D _cell) { cell = _cell; }
 	~Node() { }
 

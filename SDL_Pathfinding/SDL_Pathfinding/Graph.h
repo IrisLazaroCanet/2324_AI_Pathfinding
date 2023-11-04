@@ -7,6 +7,7 @@
 class Graph
 {
 public:
+	Graph() { }
 	Graph(std::vector<Node*> _nodes, std::vector<Connection*> _connections);
 	~Graph();
 

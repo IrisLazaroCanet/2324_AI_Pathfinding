@@ -132,10 +132,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
+    <ClCompile Include="PathCalculator.cpp" />
+    <ClCompile Include="AStarAlgorithm.cpp" />
+    <ClCompile Include="BFSAlgorithm.cpp" />
     <ClCompile Include="ChebyshevDistance.cpp" />
     <ClCompile Include="Connection.cpp" />
     <ClCompile Include="DiagonalDistance.cpp" />
+    <ClCompile Include="DijkstraAlgorithm.cpp" />
     <ClCompile Include="EuclideanDistance.cpp" />
+    <ClCompile Include="GreedyAlgorithm.cpp" />
     <ClCompile Include="Grid.cpp" />
     <ClCompile Include="HeuristicCalculator.cpp" />
     <ClCompile Include="main.cpp" />
@@ -149,11 +154,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h" />
+    <ClInclude Include="PathCalculator.h" />
+    <ClInclude Include="AStarAlgorithm.h" />
+    <ClInclude Include="BFSAlgorithm.h" />
     <ClInclude Include="ChebyshevDistance.h" />
     <ClInclude Include="Connection.h" />
     <ClInclude Include="DiagonalDistance.h" />
+    <ClInclude Include="DijkstraAlgorithm.h" />
     <ClInclude Include="EuclideanDistance.h" />
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="GreedyAlgorithm.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="HeuristicCalculator.h" />
     <ClInclude Include="HeuristicFunction.h" />
@@ -161,6 +171,7 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="OctileDistance.h" />
     <ClInclude Include="Path.h" />
+    <ClInclude Include="PathfindingAlgorithm.h" />
     <ClInclude Include="PathFollowing.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="ScenePathFindingMouse.h" />
