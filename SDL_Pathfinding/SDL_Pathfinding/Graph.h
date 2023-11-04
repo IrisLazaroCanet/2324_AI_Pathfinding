@@ -9,7 +9,7 @@ class Graph
 public:
 	Graph() { }
 	Graph(std::vector<Node*> _nodes, std::vector<Connection*> _connections);
-	~Graph();
+	~Graph() { };
 
 	std::vector<Connection*> GetConnections (Node* fromNode);
 

@@ -29,6 +29,8 @@ public:
 
 	Path* FindPath(Graph* graph, Node* origin, Node* goal);
 
+	PathfindingAlgorithm* GetCurrentAlgorithm() { return pathfindingAlgorithms[currentAlgorithmKey]; }
+
 	void SetAlgorithmToBFS();
 	void SetAlgorithmToDijkstra();
 	void SetAlgorithmToGreedy();
