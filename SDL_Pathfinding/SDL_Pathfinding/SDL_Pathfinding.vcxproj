@@ -153,6 +153,7 @@
     <ClInclude Include="Connection.h" />
     <ClInclude Include="DiagonalDistance.h" />
     <ClInclude Include="EuclideanDistance.h" />
+    <ClInclude Include="Graph.h" />
     <ClInclude Include="Grid.h" />
     <ClInclude Include="HeuristicCalculator.h" />
     <ClInclude Include="HeuristicFunction.h" />
