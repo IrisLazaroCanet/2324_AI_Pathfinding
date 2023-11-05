@@ -1,20 +1,22 @@
 #pragma once
 #include "Node.h"
+#include <string>
+#include <map>
 
 //Totes les connexions seran bidireccionals
 
 class Connection
 {
 private:
-	Node* fromNode;
-	Node* toNode;
+	std::string fromNodeId;
+	std::string toNodeId;
 	float cost;
 
 public:
-	Connection(float _cost, Node* _fromNode, Node* _toNode);
+	Connection(float _cost, std::string _fromNodeId, std::string _toNodeId);
 	~Connection();
 
 	float GetCost() { return cost; }
-	Node* GetFromNode() { return fromNode; }
-	Node* GetToNode() { return toNode; }
+	std::string GetFromNode() { return fromNodeId; }
+	std::string GetToNode() { return toNodeId; }
 };

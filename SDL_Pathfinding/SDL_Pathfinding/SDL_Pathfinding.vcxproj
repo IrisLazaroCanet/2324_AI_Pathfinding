@@ -134,6 +134,7 @@
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="FileSerializer.cpp" />
     <ClCompile Include="FrontierElement.cpp" />
+    <ClCompile Include="Graph.cpp" />
     <ClCompile Include="PathCalculator.cpp" />
     <ClCompile Include="AStarAlgorithm.cpp" />
     <ClCompile Include="BFSAlgorithm.cpp" />
