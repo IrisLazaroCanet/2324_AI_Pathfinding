@@ -133,6 +133,7 @@
   <ItemGroup>
     <ClCompile Include="Agent.cpp" />
     <ClCompile Include="FileSerializer.cpp" />
+    <ClCompile Include="FrontierElement.cpp" />
     <ClCompile Include="PathCalculator.cpp" />
     <ClCompile Include="AStarAlgorithm.cpp" />
     <ClCompile Include="BFSAlgorithm.cpp" />
@@ -159,6 +160,7 @@
   <ItemGroup>
     <ClInclude Include="Agent.h" />
     <ClInclude Include="FileSerializer.h" />
+    <ClInclude Include="FrontierElement.h" />
     <ClInclude Include="PathCalculator.h" />
     <ClInclude Include="AStarAlgorithm.h" />
     <ClInclude Include="BFSAlgorithm.h" />

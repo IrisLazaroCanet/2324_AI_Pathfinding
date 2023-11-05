@@ -18,14 +18,15 @@ class Node
 {
 private:
 	Vector2D cell;
-	float heuristic;	//Assignat per HC singleton en escollir un algorisme
+	//float heuristic;	//Assignat per HC singleton en escollir un algorisme
+
 
 public:
 	Node() { }
 	Node(Vector2D _cell) { cell = _cell; }
 	~Node() { }
 
-	void SetHeuristic(float _heuristic) { heuristic = _heuristic; }
-	float GetHeuristic() { return heuristic; }
+	//void SetHeuristic(float _heuristic) { heuristic = _heuristic; }
+	//Sfloat GetHeuristic() { return heuristic; }
 	Vector2D GetCell() { return cell; }
 };

@@ -17,8 +17,8 @@ public:
 	int GetExploredNodes() { return (int)visited.size(); }
 
 private:
-	//TODO: Check if queue is the appropiate data structure
-	std::queue<Node*> frontier;
+	//TODO: Check if vector is the appropiate data structure
+	std::vector<Node*> frontier;
 
 	//TODO: Check if vector is the approapiate data structure
 	std::vector<Node*> visited;
