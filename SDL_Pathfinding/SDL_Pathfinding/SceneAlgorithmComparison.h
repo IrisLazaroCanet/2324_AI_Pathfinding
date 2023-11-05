@@ -24,11 +24,12 @@ public:
 	void SaveResultsToFile();
 
 private:
+	Graph* InitializeGraph(Grid* grid);
+	
 	Grid* maze;
 	Graph* graph;
 	std::vector<PathfindingProblem*> problemInstances;
 
 	bool finishedComputing;
-
 	const int NUM_INSTANCES = 20;
 };

@@ -4,8 +4,7 @@ ScenePathfindingComparison::ScenePathfindingComparison()
 {
 	//TODO: Construct graph using maze  
 	maze = new Grid("../res/maze.csv");
-	//graph = new Graph(...);
-	graph = new Graph();
+	graph = InitializeGraph(maze);
 	
 	srand((unsigned int)time(NULL));
 
@@ -73,6 +72,16 @@ void ScenePathfindingComparison::SolveProblems()
 
 		finishedComputing = true;
 		std::cout << "FINISHED COMPUTING" << std::endl;
+
+
+		//TEST GRAPH
+		std::vector<Connection*> testConnections;
+		testConnections = graph->GetConnections("A");
+		for (int i = 0; i < testConnections.size(); i++)
+		{
+			std::cout << testConnections[i]->GetToNode() << ", " << testConnections[i]->GetCost() << std::endl;
+		}
+
 	}
 }
 
@@ -82,4 +91,38 @@ void ScenePathfindingComparison::SaveResultsToFile()
 	{
 		FS->WriteMapToBinaryFile("problem_results.txt", problemInstances[i]->GetExploredNodes());
 	}
+}
+
+Graph* ScenePathfindingComparison::InitializeGraph(Grid* grid)
+{
+	//TODO: Construct graph connections using terrain
+	//Use grid functions?
+
+	//Hardcoded nodes & connections to test
+	Node* S = new Node(Vector2D(0.5, 0.f));
+	Node* A = new Node(Vector2D(0.f, 1.f));
+	Node* B = new Node(Vector2D(1.f, 1.f));
+	Node* C = new Node(Vector2D(0.f, 2.f));
+	Node* D = new Node(Vector2D(1.f, 2.f));
+	Node* G = new Node(Vector2D(0.5f, 3.f));
+	std::map<std::string, Node*> nodes;
+	nodes["S"] = S;
+	nodes["A"] = A;
+	nodes["B"] = B;
+	nodes["C"] = C;
+	nodes["D"] = D;
+	nodes["G"] = G;
+
+	std::map<std::pair<std::string, std::string>, int> _connectionsInfo;
+	_connectionsInfo[std::make_pair("S", "A")] = 3;
+	_connectionsInfo[std::make_pair("S", "B")] = 5;
+	_connectionsInfo[std::make_pair("A", "D")] = 2;
+	_connectionsInfo[std::make_pair("B", "D")] = 6;
+	_connectionsInfo[std::make_pair("B", "G")] = 5;
+	_connectionsInfo[std::make_pair("D", "C")] = 9;
+	_connectionsInfo[std::make_pair("D", "G")] = 3;
+
+	Graph* graph = new Graph(nodes, _connectionsInfo);
+
+	return graph;
 }
