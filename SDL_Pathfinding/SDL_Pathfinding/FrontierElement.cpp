@@ -1,6 +1,6 @@
 #include "FrontierElement.h"
 
-FrontierElement::FrontierElement(Node* _node, Node* _cameFrom, float _costSoFar, float _heuristic)
+FrontierElement::FrontierElement(std::pair<std::string, Node*> _node, std::pair<std::string, Node*> _cameFrom, float _costSoFar, float _heuristic)
 {
 	node = _node;
 	cameFrom = _cameFrom;
@@ -11,8 +11,8 @@ FrontierElement::FrontierElement(Node* _node, Node* _cameFrom, float _costSoFar,
 
 FrontierElement::~FrontierElement()
 {
-	delete node;
-	delete cameFrom;
+	delete node.second;
+	delete cameFrom.second;
 }
 
 float FrontierElement::CalculatePriority()

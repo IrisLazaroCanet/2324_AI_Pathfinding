@@ -1,13 +1,16 @@
 #pragma once
 #include "Node.h"
 
+#include <map>
+#include <string>
+
 class FrontierElement
 {
 public:
-	FrontierElement(Node* _node, Node* _cameFrom, float _costSoFar, float _heuristic);
+	FrontierElement(std::pair<std::string, Node*> _node, std::pair<std::string, Node*> _cameFrom, float _costSoFar, float _heuristic);
 	~FrontierElement();
 
-	Node* GetCameFrom() { return cameFrom; }
+	std::string GetCameFrom() { return cameFrom.first; }
 	float GetCostSoFar() { return costSoFar; }
 	float GetHeuristic() { return heuristic; }
 	float GetPriority() { return priority; }
@@ -15,8 +18,8 @@ public:
 private:
 	float CalculatePriority();
 
-	Node* node;
-	Node* cameFrom;
+	std::pair<std::string, Node*> node;
+	std::pair<std::string, Node*> cameFrom;
 	float costSoFar;
 	float heuristic;
 	float priority;

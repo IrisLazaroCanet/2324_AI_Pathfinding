@@ -74,7 +74,7 @@ void ScenePathfindingComparison::SolveProblems()
 		std::cout << "FINISHED COMPUTING" << std::endl;
 
 
-		//TEST GRAPH
+		//TEST: Get node A connections from graph
 		std::vector<Connection*> testConnections;
 		testConnections = graph->GetConnections("A");
 		for (int i = 0; i < testConnections.size(); i++)
@@ -98,7 +98,7 @@ Graph* ScenePathfindingComparison::InitializeGraph(Grid* grid)
 	//TODO: Construct graph connections using terrain
 	//Use grid functions?
 
-	//Hardcoded nodes & connections to test
+	//TEST: Hardcoded nodes & connections to test
 	Node* S = new Node(Vector2D(0.5, 0.f));
 	Node* A = new Node(Vector2D(0.f, 1.f));
 	Node* B = new Node(Vector2D(1.f, 1.f));

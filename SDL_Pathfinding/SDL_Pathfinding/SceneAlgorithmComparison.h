@@ -10,6 +10,7 @@
 #include "Graph.h"
 #include "PathfindingProblem.h"
 #include "FileSerializer.h"
+#include "FrontierElement.h"
 
 class ScenePathfindingComparison : public Scene
 {
@@ -29,6 +30,7 @@ private:
 	Grid* maze;
 	Graph* graph;
 	std::vector<PathfindingProblem*> problemInstances;
+	std::map<std::string, FrontierElement*> frontier;
 
 	bool finishedComputing;
 	const int NUM_INSTANCES = 20;
