@@ -1,14 +1,15 @@
 #include "Connection.h"
 
-Connection::Connection(float _cost, std::string _fromNodeId, std::string _toNodeId)
+///<summary>
+///All connections are bidirectional
+///</summary>
+Connection::Connection(int _cost, std::string _fromNodeId, std::string _toNodeId)
 {
 	cost = _cost;
-	fromNode = _fromNode;
-	toNode = _toNode;
+	fromNodeId = _fromNodeId;
+	toNodeId = _toNodeId;
 }
 
 Connection::~Connection()
 {
-	delete fromNode;
-	delete toNode;
 }
