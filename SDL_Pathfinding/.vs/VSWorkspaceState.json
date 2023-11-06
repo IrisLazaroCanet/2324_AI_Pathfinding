@@ -3,6 +3,6 @@
     "",
     "\\SDL_Pathfinding"
   ],
-  "SelectedNode": "\\SDL_Pathfinding\\Grid.h",
+  "SelectedNode": "\\SDL_Pathfinding\\BFSAlgorithm.cpp",
   "PreviewInSolutionExplorer": false
 }
