@@ -1,3 +1,15 @@
-﻿  SceneAlgorithmComparison.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\SceneAlgorithmComparison.cpp(80,21): warning C4018: '<': signed/unsigned mismatch
-  SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe
+﻿  AStarAlgorithm.cpp
+  BFSAlgorithm.cpp
+  Connection.cpp
+  DijkstraAlgorithm.cpp
+  FrontierElement.cpp
+  Graph.cpp
+  GreedyAlgorithm.cpp
+  PathCalculator.cpp
+  PathfindingProblem.cpp
+  SceneAlgorithmComparison.cpp
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\SceneAlgorithmComparison.cpp(80,21): warning C4018: '<': no coinciden signed/unsigned
+  ScenePathfindingAlgorithms.cpp
+  main.cpp
+  Generando código...
+  SDL_Pathfinding.vcxproj -> D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe
