@@ -3,6 +3,6 @@
     "",
     "\\SDL_Pathfinding"
   ],
-  "SelectedNode": "\\SDL_Pathfinding\\BFSAlgorithm.cpp",
+  "SelectedNode": "\\SDL_Pathfinding\\DijkstraAlgorithm.cpp",
   "PreviewInSolutionExplorer": false
 }

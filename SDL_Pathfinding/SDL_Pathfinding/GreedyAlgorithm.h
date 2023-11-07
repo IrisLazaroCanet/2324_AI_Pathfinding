@@ -8,4 +8,5 @@ public:
 	~GreedyAlgorithm() { }
 
 	Path* FindPath(Graph* graph, Node* origin, Node* goal) override;
+
 };

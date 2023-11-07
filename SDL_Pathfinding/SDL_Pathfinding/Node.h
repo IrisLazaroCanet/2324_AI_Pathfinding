@@ -19,23 +19,24 @@
 class Node
 {
 private:
-	Vector2D cell;
-	//float heuristic;	//Assignat per HC singleton en escollir un algorisme
+    Vector2D cell;
+    float heuristic;  // Add a heuristic value
 
-
-	std::string id;  // Add an ID for the node
+    std::string id;  // Add an ID for the node
 
 public:
-	Node() { }
-	Node(Vector2D _cell) { cell = _cell; }
-	~Node() { }
+    Node() : heuristic(0.0f) { }  // Initialize the heuristic to 0
+    Node(Vector2D _cell) : cell(_cell), heuristic(0.0f) { }
+    ~Node() { }
 
-	//void SetHeuristic(float _heuristic) { heuristic = _heuristic; }
-	//Sfloat GetHeuristic() { return heuristic; }
+    // Set the heuristic value
+    void SetHeuristic(float _heuristic) { heuristic = _heuristic; }
 
-	// Add a method to get the ID of the node
-	std::string GetId() const { return id; }
+    // Get the heuristic value
+    float GetHeuristic() { return heuristic; }
 
+    // Add a method to get the ID of the node
+    std::string GetId() const { return id; }
 
-	Vector2D GetCell() { return cell; }
+    Vector2D GetCell() { return cell; }
 };
