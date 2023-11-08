@@ -23,16 +23,19 @@ Path* AStarAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
         pq.pop();
 
         // If the goal node is reached, construct the path and return it
-        if (current == goal)
+        if (current->GetCell() == goal->GetCell())
         {
             Path* path = new Path;
             Node* currentNode = goal;
 
             // Backtrack from the goal to the origin using parentMap
+            int insertCounter = 0;
             while (currentNode != nullptr)
             {
-                path->points.insert(path->points.begin(), currentNode->GetCell());
+                //TODO: Aquest begin pot estar fallant
+                path->points.insert(path->points.begin() + insertCounter, currentNode->GetCell());
                 currentNode = parentMap[currentNode];
+                insertCounter++;
             }
 
             return path;

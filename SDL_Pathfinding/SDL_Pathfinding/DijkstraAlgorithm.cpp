@@ -25,7 +25,7 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
         pq.pop();
 
         // If the goal node is reached, construct the path and return it
-        if (current == goal)
+        if (current->GetCell() == goal->GetCell())
         {
             Path* path = new Path;
             Node* currentNode = goal;

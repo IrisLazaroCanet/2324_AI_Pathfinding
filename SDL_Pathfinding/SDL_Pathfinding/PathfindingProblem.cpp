@@ -34,7 +34,7 @@ void PathfindingProblem::SolveProblem()
 	
 	//A*
 	PC->SetAlgorithmToAStar();
-	PC->FindPath(graph, start, goal);
+	Path* testPath = PC->FindPath(graph, start, goal);
 	exploredNodes[ASTAR_KEY] = PC->GetCurrentAlgorithm()->GetExploredNodes();
 	std::cout << exploredNodes[ASTAR_KEY] << std::endl;
 
