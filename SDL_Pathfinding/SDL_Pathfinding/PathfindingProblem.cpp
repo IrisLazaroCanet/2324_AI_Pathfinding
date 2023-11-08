@@ -36,19 +36,23 @@ void PathfindingProblem::SolveProblem()
 	PC->SetAlgorithmToAStar();
 	PC->FindPath(graph, start, goal);
 	exploredNodes[ASTAR_KEY] = PC->GetCurrentAlgorithm()->GetExploredNodes();
+	std::cout << exploredNodes[ASTAR_KEY] << std::endl;
 
 	//BFS
 	PC->SetAlgorithmToBFS();
 	PC->FindPath(graph, start, goal);
 	exploredNodes[BFS_KEY] = PC->GetCurrentAlgorithm()->GetExploredNodes();
+	std::cout << exploredNodes[BFS_KEY] << std::endl;
 
 	//Dijkstra
 	PC->SetAlgorithmToDijkstra();
 	PC->FindPath(graph, start, goal);
 	exploredNodes[DIJKSTRA_KEY] = PC->GetCurrentAlgorithm()->GetExploredNodes();
+	std::cout << exploredNodes[DIJKSTRA_KEY] << std::endl;
 
 	//Greedy
 	PC->SetAlgorithmToGreedy();
 	PC->FindPath(graph, start, goal);
 	exploredNodes[GREEDY_KEY] = PC->GetCurrentAlgorithm()->GetExploredNodes();
+	std::cout << exploredNodes[GREEDY_KEY] << std::endl;
 }

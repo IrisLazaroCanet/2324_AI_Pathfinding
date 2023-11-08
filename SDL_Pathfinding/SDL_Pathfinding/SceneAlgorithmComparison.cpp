@@ -12,23 +12,28 @@ ScenePathfindingComparison::ScenePathfindingComparison()
 	for (int i = 0; i < NUM_INSTANCES; i++)
 	{
 		//Initialize start with a random cell
+		/*
 		Vector2D start_cell(-1, -1);
 		while (!maze->isValidCell(start_cell))
 			start_cell = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-
-		Node* startNode = new Node(start_cell);
+		*/
+		Vector2D start_cell = graph->GetNodeFromId("A").second->GetCell();
+		Node* startNode = new Node(start_cell, "A");
 
 		//Initialize goal with a random cell (but at least 3 cells far from the agent)
+		/*
 		Vector2D goal_cell(-1, -1);
 		while ((!maze->isValidCell(goal_cell)) || (Vector2D::Distance(goal_cell, start_cell) < 3))
 			goal_cell = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
+		*/
 
-		Node* goalNode = new Node(goal_cell);
+		Vector2D goal_cell = graph->GetNodeFromId("G").second->GetCell();
+		Node* goalNode = new Node(goal_cell, "G");
 
 		problemInstances.push_back(new PathfindingProblem(graph, startNode, goalNode));
 
-		delete startNode;
-		delete goalNode;
+		//delete startNode;
+		//delete goalNode;
 	}
 
 	finishedComputing = false;
@@ -99,12 +104,12 @@ Graph* ScenePathfindingComparison::InitializeGraph(Grid* grid)
 	//Use grid functions?
 
 	//TEST: Hardcoded nodes & connections to test
-	Node* S = new Node(Vector2D(0.5, 0.f));
-	Node* A = new Node(Vector2D(0.f, 1.f));
-	Node* B = new Node(Vector2D(1.f, 1.f));
-	Node* C = new Node(Vector2D(0.f, 2.f));
-	Node* D = new Node(Vector2D(1.f, 2.f));
-	Node* G = new Node(Vector2D(0.5f, 3.f));
+	Node* S = new Node(Vector2D(0.5, 0.f), "S");
+	Node* A = new Node(Vector2D(0.f, 1.f), "A");
+	Node* B = new Node(Vector2D(1.f, 1.f), "B");
+	Node* C = new Node(Vector2D(0.f, 2.f), "C");
+	Node* D = new Node(Vector2D(1.f, 2.f), "D");
+	Node* G = new Node(Vector2D(0.5f, 3.f), "G");
 	std::map<std::string, Node*> nodes;
 	nodes["S"] = S;
 	nodes["A"] = A;
