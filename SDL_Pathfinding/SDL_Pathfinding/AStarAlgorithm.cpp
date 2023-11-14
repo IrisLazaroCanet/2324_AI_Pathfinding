@@ -29,11 +29,13 @@ Path* AStarAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             Node* currentNode = goal;
 
             // Backtrack from the goal to the origin using parentMap
+            //TODO: Revisar ordre d'insert dins el path
             int insertCounter = 0;
             while (currentNode != nullptr)
             {
-                //TODO: Aquest begin pot estar fallant
+                //TODO: Path sols retorna un node (l'últim)
                 path->points.insert(path->points.begin() + insertCounter, currentNode->GetCell());
+                //path->points.push_back(currentNode->GetCell());
                 currentNode = parentMap[currentNode];
                 insertCounter++;
             }

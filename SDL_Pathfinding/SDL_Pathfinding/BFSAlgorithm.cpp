@@ -22,10 +22,13 @@ Path* BFSAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             Node* currentNode = goal;
 
             // Backtrack from the goal to the origin using parentMap
+            //TODO: Revisar ordre d'insert dins el path
+            int insertCounter = 0;
             while (currentNode != nullptr)
             {
-                path->points.insert(path->points.begin(), currentNode->GetCell());
+                path->points.insert(path->points.begin() + insertCounter, currentNode->GetCell());
                 currentNode = parentMap[currentNode];
+                insertCounter++;
             }
 
             return path;
@@ -37,14 +40,30 @@ Path* BFSAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
         for (Connection* connection : connections)
         {
             std::pair<std::string, Node*> neighborInfo = graph->GetNodeFromId(connection->GetToNode());
-            Node* neighbor = neighborInfo.second; // Extract the Node* from the pair
+            //Node* neighbor = neighborInfo.second; // Extract the Node* from the pair
+            std::string neighborId = neighborInfo.first;  //Extract the node's ID from the pair
 
             // Check if the neighbor node has not been visited
+            bool foundNeighbor = false;
+            for (std::map<Node*, Node*>::iterator it = parentMap.begin(); it != parentMap.end(); it++)
+            {
+                if (it->first->GetId() == neighborId)
+                    foundNeighbor = true;
+            }
+
+            if (!foundNeighbor)
+            {
+                queue.push(neighborInfo.second);
+                parentMap[neighborInfo.second] = current; // Set the parent for backtracking
+            }
+
+            /*
             if (parentMap.find(neighbor) == parentMap.end())
             {
                 queue.push(neighbor);
                 parentMap[neighbor] = current; // Set the parent for backtracking
             }
+            */
         }
     }
 
