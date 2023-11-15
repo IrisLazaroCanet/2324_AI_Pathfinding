@@ -17,8 +17,8 @@ ScenePathfindingComparison::ScenePathfindingComparison()
 		while (!maze->isValidCell(start_cell))
 			start_cell = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
 		*/
-		Vector2D start_cell = graph->GetNodeFromId("A").second->GetCell();
-		Node* startNode = new Node(start_cell, "A");
+		Vector2D start_cell = graph->GetNodeFromId("S").second->GetCell();
+		Node* startNode = new Node(start_cell, "S");
 
 		//Initialize goal with a random cell (but at least 3 cells far from the agent)
 		/*
