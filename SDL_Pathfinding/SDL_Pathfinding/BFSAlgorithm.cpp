@@ -19,16 +19,14 @@ Path* BFSAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
         if (current->GetCell() == goal->GetCell())
         {
             Path* path = new Path;
-            Node* currentNode = goal;
+            Node* currentNode = current;
 
             // Backtrack from the goal to the origin using parentMap
             //TODO: Revisar ordre d'insert dins el path
-            int insertCounter = 0;
             while (currentNode != nullptr)
             {
-                path->points.insert(path->points.end() - insertCounter, currentNode->GetCell());
+                path->points.insert(path->points.begin(), currentNode->GetCell());
                 currentNode = parentMap[currentNode];
-                insertCounter++;
             }
 
             return path;
@@ -55,6 +53,7 @@ Path* BFSAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             {
                 queue.push(neighborInfo.second);
                 parentMap[neighborInfo.second] = current; // Set the parent for backtracking
+                std::cout << "Neighbor info: " << neighborInfo.first << ", " << current->GetId() << std::endl;
             }
 
             /*
