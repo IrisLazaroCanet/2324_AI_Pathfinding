@@ -22,15 +22,16 @@ Path* GreedyAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
         if (current->GetCell() == goal->GetCell())
         {
             Path* path = new Path;
-            Node* currentNode = goal;
+            Node* currentNode = current;
 
             // Backtrack from the goal to the origin using parentMap
             while (currentNode != nullptr)
             {
                 path->points.insert(path->points.begin(), currentNode->GetCell());
+                std::cout << currentNode->GetId() << " ";
                 currentNode = parentMap[currentNode];
             }
-
+            std::cout << "\n";
             return path;
         }
 
