@@ -1,6 +1,7 @@
 #pragma once
 #include "Node.h"
 #include "Connection.h"
+#include "Grid.h"
 
 #include <string>
 #include <vector>
@@ -11,6 +12,7 @@ class Graph
 public:
 	Graph() { }
 	Graph(std::map<std::string, Node*> _nodes, std::map<std::pair<std::string, std::string>, int> _connectionsInfo);
+	Graph(Grid grid);
 	~Graph();
 
 	std::vector<Connection*> GetConnections (std::string fromNodeId);

@@ -10,6 +10,15 @@ Graph::Graph(std::map<std::string, Node*> _nodes, std::map<std::pair<std::string
 	connections = InitializeConnections(_connectionsInfo);
 }
 
+Graph::Graph(Grid grid)
+{
+	//Used for horizontal connections
+	std::vector<std::pair<std::string, int>> rowData;
+
+	//Used for vertical connections
+	std::vector<std::pair<std::string, int>> colData;
+}
+
 Graph::~Graph()
 {
 	for (std::map<std::string, Node*>::iterator it = nodes.begin(); it != nodes.end(); it++)
