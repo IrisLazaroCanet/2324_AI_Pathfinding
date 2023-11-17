@@ -4,8 +4,8 @@ using namespace std;
 
 Grid::Grid(char* filename)
 {
-	num_cell_x = SRC_WIDTH / CELL_SIZE;
-	num_cell_y = SRC_HEIGHT / CELL_SIZE;
+	num_cell_x = SRC_WIDTH / CELL_SIZE;		//numCols
+	num_cell_y = SRC_HEIGHT / CELL_SIZE;	//numRows
 
 	// Initialize the terrain matrix from file (for each cell a zero value indicates it's a wall, positive values indicate terrain cell cost)
 	std::ifstream infile(filename);
@@ -54,4 +54,9 @@ bool Grid::isValidCell(Vector2D cell)
 	if ((cell.x < 0) || (cell.y < 0) || (cell.y >= terrain.size()) || (cell.x >= terrain[0].size()))
 		return false;
 	return !(terrain[(unsigned int)cell.y][(unsigned int)cell.x] == 0);
+}
+
+bool Grid::isValidTerrainPosition(int i, int j)
+{
+	return !(terrain[(unsigned int)i][j] == 0);
 }

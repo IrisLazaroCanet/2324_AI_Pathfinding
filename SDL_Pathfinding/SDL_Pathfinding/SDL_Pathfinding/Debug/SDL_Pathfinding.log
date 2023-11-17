@@ -1,2 +1,8 @@
-﻿  LINK : C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\\bin\SDL_Pathfinding.exe not found or not built by the last incremental link; performing full link
+﻿  Graph.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(31,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(47,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(64,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(77,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(79,21): warning C4018: '<': signed/unsigned mismatch
   SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe

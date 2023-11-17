@@ -12,7 +12,7 @@ class Graph
 public:
 	Graph() { }
 	Graph(std::map<std::string, Node*> _nodes, std::map<std::pair<std::string, std::string>, int> _connectionsInfo);
-	Graph(Grid grid);
+	Graph(Grid* grid);
 	~Graph();
 
 	std::vector<Connection*> GetConnections (std::string fromNodeId);
@@ -20,6 +20,10 @@ public:
 
 private:
 	std::vector<Connection*> InitializeConnections(std::map<std::pair<std::string, std::string>, int> connectionsInfo);
+	std::string GenerateNodeName(int charAmount);
+	std::string GenerateValidNodeName(int charAmount);
+
+	std::vector<std::string> unavailableNames;
 
 	std::map<std::string, Node*> nodes;
 	std::vector<Connection*> connections;	

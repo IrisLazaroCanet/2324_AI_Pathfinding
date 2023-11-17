@@ -10,13 +10,98 @@ Graph::Graph(std::map<std::string, Node*> _nodes, std::map<std::pair<std::string
 	connections = InitializeConnections(_connectionsInfo);
 }
 
-Graph::Graph(Grid grid)
+Graph::Graph(Grid* grid)
 {
-	//Used for horizontal connections
-	std::vector<std::pair<std::string, int>> rowData;
+	//Used to store all cells (name & terrain value)
+	std::vector<std::pair<std::string, int>> namedPositions;
 
-	//Used for vertical connections
-	std::vector<std::pair<std::string, int>> colData;
+	//Used for horizontal connections - one vector for each row
+	std::vector<std::vector<std::pair<std::string, int>>> rowData;
+
+	//Used for vertical connections - one vector for each col
+	std::vector<std::vector<std::pair<std::string, int>>> colData;
+
+	//Create vector of std::pairs -> node name & terrain int
+	//Iterate vector of std::pairs to make row vectors
+	//Iterate vector of std::pairs to make col vectors
+
+	//Iterate all terrain to store all its positions, with names
+	for (int i = 0; i < grid->getTerrain().size(); i++)
+	{
+		for (int j = 0; j < grid->getTerrain()[i].size(); j++)
+		{
+			if(grid->getTerrain()[i][j] != 0)
+				namedPositions.push_back(std::make_pair(GenerateValidNodeName(6), grid->getTerrain()[i][j]));
+			else
+				namedPositions.push_back(std::make_pair("", grid->getTerrain()[i][j]));
+		}
+	}
+
+	//Fill rows
+	int rowNum = 0;
+	for (int i = 0; i < grid->getNumCellY(); i++)
+	{
+		rowData.push_back(std::vector<std::pair<std::string, int>>());
+	}
+
+	for (int i = 0; i < namedPositions.size(); i++)
+	{
+		rowData[rowNum].push_back(namedPositions[i]);
+
+		if (i % grid->getNumCellX() == 0 && i >= grid->getNumCellX())
+		{
+			rowNum++;
+		}
+	}
+
+	//Fill cols
+	int colNum = 0;
+	for (int i = 0; i < grid->getNumCellX(); i++)
+	{
+		colData.push_back(std::vector<std::pair<std::string, int>>());
+	}
+
+	for (int i = 0; i < namedPositions.size(); i++)
+	{
+		colData[colNum].push_back(namedPositions[i]);
+		colNum++;
+
+		if (i % grid->getNumCellY() == 0)
+		{
+			colNum = 0;
+		}
+	}
+
+	//Test: print data
+	std::cout << "rowData" << std::endl;
+	for (int i = 0; i < rowData.size(); i++)
+	{
+		for (int j = 0; j < rowData[i].size(); j++)
+		{
+			std::cout << rowData[i][j].second << " ";
+		}
+
+		std::cout << "\n";
+	}
+
+
+	/*
+	for (int i = 0; i < grid.getTerrain().size(); i++)
+	{
+		std::vector<std::pair<std::string, int>> row;
+		
+		for (int j = 0; j < grid.getTerrain()[i].size(); j++)
+		{
+			//Fill row
+			row.push_back(std::make_pair(GenerateValidNodeName(5), grid.getTerrain()[i][j]));
+		}
+
+		rowData.push_back(row);
+	}
+	*/
+
+
+	//if (grid.isValidTerrainPosition(i, j));
 }
 
 Graph::~Graph()
@@ -63,4 +148,47 @@ std::vector<Connection*> Graph::InitializeConnections(std::map<std::pair<std::st
 	}
 
 	return returnedConnections;
+}
+
+std::string Graph::GenerateNodeName(int charAmount)
+{
+
+	std::string glyphs = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	std::string generatedName = "";
+
+	for (int i = 0; i < charAmount; i++)
+	{
+		generatedName += glyphs[rand() % glyphs.size()];
+	}
+
+	return generatedName;
+}
+
+std::string Graph::GenerateValidNodeName(int charAmount)
+{
+	std::string generatedName;
+	bool validName;
+
+	do
+	{
+		generatedName = GenerateNodeName(10);
+
+		if (unavailableNames.size() == 0)
+			validName = true;
+
+		for(std::string id : unavailableNames)
+		{
+			if (generatedName == id)
+			{
+				validName = false;
+				break;
+			}
+			else
+				validName = true;
+		}
+
+	} while (!validName);
+
+	unavailableNames.push_back(generatedName);
+	return generatedName;
 }

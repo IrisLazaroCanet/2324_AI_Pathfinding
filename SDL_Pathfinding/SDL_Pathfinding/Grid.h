@@ -22,6 +22,8 @@ public:
 	Vector2D cell2pix(Vector2D cell);
 	Vector2D pix2cell(Vector2D pix);
 	bool isValidCell(Vector2D cell);
+	bool isValidTerrainPosition(int i, int j);
 	int getNumCellX();
-	int getNumCellY();
+	int getNumCellY(); 
+	std::vector<std::vector<int>> getTerrain() { return terrain; }
 };

@@ -5,6 +5,10 @@ ScenePathfindingAlgorithms::ScenePathfindingAlgorithms()
 	draw_grid = false;
 	maze = new Grid("../res/maze.csv");
 
+	//TEST
+	Graph test = Graph(maze);
+	//
+
 	loadTextures("../res/maze.png", "../res/coin.png");
 
 	srand((unsigned int)time(NULL));
