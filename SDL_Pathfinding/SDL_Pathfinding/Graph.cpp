@@ -84,6 +84,7 @@ Graph::Graph(Grid* grid)
 				}
 			}
 		}
+		std::cout << "\n";
 		/*
 		//Check connection with previous (left) node
 		if (i % grid->getNumCellX() != 0)
@@ -96,6 +97,7 @@ Graph::Graph(Grid* grid)
 		}
 		*/
 	}
+
 
 	//Fill cols
 	int colNum = 0;
@@ -114,6 +116,35 @@ Graph::Graph(Grid* grid)
 		colData[colNum].push_back(namedPositions[i]);
 		colNum++;
 	}
+
+	//Create connections between cols
+	for (int i = 0; i < colData.size(); i++)
+	{
+		for (int j = 0; j < colData[i].size(); j++)
+		{
+			//Check connection with previous (up) node
+			if (j % grid->getNumCellY() != 0)
+			{
+				if (colData[i][j - 1].first != "")
+				{
+					//Create connection (cost always 1 for now)
+					connections.push_back(new Connection(1, colData[i][j - 1].first, colData[i][j].first));
+				}
+			}
+
+			//Check connection with next (down) node
+			if (j % grid->getNumCellY() != grid->getNumCellY() - 1)
+			{
+				if (colData[i][j + 1].first != "")
+				{
+					//Create connection (cost always 1 for now)
+					connections.push_back(new Connection(1, colData[i][j + 1].first, colData[i][j].first));
+				}
+			}
+		}
+	}
+
+	//TEST
 }
 
 Graph::~Graph()
