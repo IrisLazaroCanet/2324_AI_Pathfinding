@@ -46,12 +46,12 @@ Graph::Graph(Grid* grid)
 
 	for (int i = 0; i < namedPositions.size(); i++)
 	{
-		rowData[rowNum].push_back(namedPositions[i]);
-
 		if (i % grid->getNumCellX() == 0 && i >= grid->getNumCellX())
 		{
 			rowNum++;
 		}
+
+		rowData[rowNum].push_back(namedPositions[i]);
 	}
 
 	//Fill cols
