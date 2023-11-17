@@ -26,12 +26,17 @@ Graph::Graph(Grid* grid)
 	//Iterate vector of std::pairs to make col vectors
 
 	//Iterate all terrain to store all its positions, with names
+	//Create nodes
 	for (int i = 0; i < grid->getTerrain().size(); i++)
 	{
 		for (int j = 0; j < grid->getTerrain()[i].size(); j++)
 		{
-			if(grid->getTerrain()[i][j] != 0)
-				namedPositions.push_back(std::make_pair(GenerateValidNodeName(6), grid->getTerrain()[i][j]));
+			if (grid->getTerrain()[i][j] != 0)
+			{
+				std::string name = GenerateValidNodeName(10);
+				namedPositions.push_back(std::make_pair(name, grid->getTerrain()[i][j]));
+				nodes[name] = new Node(Vector2D(i, j), name);
+			}
 			else
 				namedPositions.push_back(std::make_pair("", grid->getTerrain()[i][j]));
 		}
@@ -54,6 +59,44 @@ Graph::Graph(Grid* grid)
 		rowData[rowNum].push_back(namedPositions[i]);
 	}
 
+	//Create connections between rows
+	for (int i = 0; i < rowData.size(); i++)
+	{
+		for (int j = 0; j < rowData[i].size(); j++)
+		{
+			//Check connection with previous (left) node
+			if (j % grid->getNumCellX() != 0)
+			{
+				if (rowData[i][j - 1].first != "")
+				{
+					//Create connection (cost always 1 for now)
+					connections.push_back(new Connection(1, rowData[i][j - 1].first, rowData[i][j].first));
+				}
+			}
+
+			//Check connection with next (right) node
+			if (j % grid->getNumCellX() != grid->getNumCellX() - 1)
+			{
+				if (rowData[i][j + 1].first != "")
+				{
+					//Create connection (cost always 1 for now)
+					connections.push_back(new Connection(1, rowData[i][j + 1].first, rowData[i][j].first));
+				}
+			}
+		}
+		/*
+		//Check connection with previous (left) node
+		if (i % grid->getNumCellX() != 0)
+		{
+		}
+
+		//Check connection with next (right) node
+		if (i % grid->getNumCellX() != grid->getNumCellX()-1)
+		{
+		}
+		*/
+	}
+
 	//Fill cols
 	int colNum = 0;
 	for (int i = 0; i < grid->getNumCellX(); i++)
@@ -71,49 +114,6 @@ Graph::Graph(Grid* grid)
 		colData[colNum].push_back(namedPositions[i]);
 		colNum++;
 	}
-
-	//Test: print data
-	std::cout << "rowData" << std::endl;
-	for (int i = 0; i < rowData.size(); i++)
-	{
-		for (int j = 0; j < rowData[i].size(); j++)
-		{
-			std::cout << rowData[i][j].second << " ";
-		}
-
-		std::cout << "\n";
-	}
-
-	std::cout << "colData" << std::endl;
-	for (int i = 0; i < colData.size(); i++)
-	{
-		for (int j = 0; j < colData[i].size(); j++)
-		{
-			std::cout << colData[i][j].second << " ";
-		}
-
-		std::cout << "\n";
-	}
-	
-
-
-	/*
-	for (int i = 0; i < grid.getTerrain().size(); i++)
-	{
-		std::vector<std::pair<std::string, int>> row;
-		
-		for (int j = 0; j < grid.getTerrain()[i].size(); j++)
-		{
-			//Fill row
-			row.push_back(std::make_pair(GenerateValidNodeName(5), grid.getTerrain()[i][j]));
-		}
-
-		rowData.push_back(row);
-	}
-	*/
-
-
-	//if (grid.isValidTerrainPosition(i, j));
 }
 
 Graph::~Graph()
