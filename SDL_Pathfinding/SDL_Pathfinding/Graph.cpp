@@ -63,13 +63,13 @@ Graph::Graph(Grid* grid)
 
 	for (int i = 0; i < namedPositions.size(); i++)
 	{
-		colData[colNum].push_back(namedPositions[i]);
-		colNum++;
-
-		if (i % grid->getNumCellY() == 0)
+		if (i % grid->getNumCellX() == 0 && i >= grid->getNumCellX())
 		{
 			colNum = 0;
 		}
+
+		colData[colNum].push_back(namedPositions[i]);
+		colNum++;
 	}
 
 	//Test: print data
@@ -83,6 +83,18 @@ Graph::Graph(Grid* grid)
 
 		std::cout << "\n";
 	}
+
+	std::cout << "colData" << std::endl;
+	for (int i = 0; i < colData.size(); i++)
+	{
+		for (int j = 0; j < colData[i].size(); j++)
+		{
+			std::cout << colData[i][j].second << " ";
+		}
+
+		std::cout << "\n";
+	}
+	
 
 
 	/*
