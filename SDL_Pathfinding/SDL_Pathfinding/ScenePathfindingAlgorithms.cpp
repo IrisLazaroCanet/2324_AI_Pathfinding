@@ -20,15 +20,29 @@ ScenePathfindingAlgorithms::ScenePathfindingAlgorithms()
 	agents.push_back(agent);
 
 	// set agent position coords to the center of a random cell
+	/*
 	Vector2D rand_cell(-1, -1);
 	while (!maze->isValidCell(rand_cell))
 		rand_cell = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
 	agents[0]->setPosition(maze->cell2pix(rand_cell));
+	*/
+
+	//Set agent position as random node
+	agentPositionNodeWithID = graph->GetRandomNodeWithID();
+	agents[0]->setPosition(graph->CellToPix(
+		agentPositionNodeWithID.second->GetCell())
+	);
+
+	//Set the coin position as random node
+	coinPositionNodeWithID = graph->GetRandomNodeWithID();
+	coinPosition = coinPositionNodeWithID.second->GetCell();
 
 	// set the coin in a random cell (but at least 3 cells far from the agent)
+	/*
 	coinPosition = Vector2D(-1, -1);
 	while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, rand_cell) < 3))
 		coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
+	*/
 
 }
 
@@ -58,7 +72,11 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 		{
 			//A*
 			PC->SetAlgorithmToAStar();
-			PC->FindPath(new Graph(), new Node(), new Node());
+			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionNodeWithID.first).second, graph->GetNodeFromId(coinPositionNodeWithID.first).second);
+			for (int i = 0; i < newPath->points.size(); i++)
+			{
+				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));
+			}
 		}
 
 		if (event->key.keysym.scancode == SDL_SCANCODE_B)
@@ -83,16 +101,6 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 		}
 		break;
 	}
-	case SDL_MOUSEMOTION:
-	case SDL_MOUSEBUTTONDOWN:
-		if (event->button.button == SDL_BUTTON_LEFT)
-		{
-			Vector2D cell = maze->pix2cell(Vector2D((float)(event->button.x), (float)(event->button.y)));
-			if (maze->isValidCell(cell)) {
-				agents[0]->addPathPoint(maze->cell2pix(cell));
-			}
-		}
-		break;
 	default:
 		break;
 	}

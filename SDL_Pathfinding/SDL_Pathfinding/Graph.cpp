@@ -177,6 +177,20 @@ std::pair<std::string, Node*> Graph::GetNodeFromId(std::string id)
 	return std::pair<std::string, Node*>(id, nodes[id]);
 }
 
+Vector2D Graph::CellToPix(Vector2D cell)
+{
+	int offset = CELL_SIZE / 2;
+	return Vector2D(cell.x * CELL_SIZE + offset, cell.y * CELL_SIZE + offset);
+}
+
+std::pair<std::string, Node*> Graph::GetRandomNodeWithID()
+{
+	std::map <std::string, Node*>::iterator item = nodes.begin();
+	std::advance(item, GetRandomIndex(nodes.size()));
+
+	return std::make_pair(item->first, nodes[item->first]);
+}
+
 std::vector<Connection*> Graph::InitializeConnections(std::map<std::pair<std::string, std::string>, int> connectionsInfo)
 {
 	std::vector<Connection*> returnedConnections;
@@ -234,4 +248,9 @@ std::string Graph::GenerateValidNodeName(int charAmount)
 
 	unavailableNames.push_back(generatedName);
 	return generatedName;
+}
+
+int Graph::GetRandomIndex(int size)
+{
+	return std::rand() % ((size - 1)+1 - 0) + 0;
 }
