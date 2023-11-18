@@ -143,8 +143,6 @@ Graph::Graph(Grid* grid)
 			}
 		}
 	}
-
-	//TEST
 }
 
 Graph::~Graph()
