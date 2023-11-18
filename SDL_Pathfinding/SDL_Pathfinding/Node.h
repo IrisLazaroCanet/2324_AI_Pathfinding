@@ -25,8 +25,8 @@ private:
     std::string id;  // Add an ID for the node
 
 public:
-    Node() : heuristic(0.0f) { }  // Initialize the heuristic to 0
-    Node(Vector2D _cell, std::string _id) : cell(_cell), id(_id), heuristic(0.0f) { }
+    Node() : heuristic(1.0f) { }  // Initialize the heuristic to 0
+    Node(Vector2D _cell, std::string _id) : cell(_cell), id(_id), heuristic(1.0f) { }
     ~Node() { }
 
     // Set the heuristic value

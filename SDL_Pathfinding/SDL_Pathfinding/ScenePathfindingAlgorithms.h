@@ -29,8 +29,8 @@ private:
 	bool draw_grid;
 
 	Graph* graph;
-	std::pair<std::string, Node*> agentPositionNodeWithID;
-	std::pair<std::string, Node*> coinPositionNodeWithID;
+	//std::pair<std::string, Node*> agentPositionNodeWithID;
+	//std::pair<std::string, Node*> coinPositionNodeWithID;
 	std::string agentPositionID;
 	std::string coinPositionID;
 	

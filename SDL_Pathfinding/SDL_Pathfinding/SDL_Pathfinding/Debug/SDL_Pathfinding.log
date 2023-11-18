@@ -1,12 +1,2 @@
-﻿  Graph.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(30,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(32,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(38,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(38,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(52,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(63,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(65,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(109,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(121,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(123,21): warning C4018: '<': signed/unsigned mismatch
+﻿  AStarAlgorithm.cpp
   SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe

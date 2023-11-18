@@ -84,7 +84,7 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 		{
 			//A*
 			PC->SetAlgorithmToAStar();
-			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionNodeWithID.first).second, graph->GetNodeFromId(coinPositionNodeWithID.first).second);
+			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
 			for (int i = 0; i < newPath->points.size(); i++)
 			{
 				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));

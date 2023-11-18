@@ -58,7 +58,9 @@ Path* AStarAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             {
                 costSoFar[neighbor] = newCost;
                 parentMap[neighbor] = current;
-                pq.push(std::make_pair(newCost + neighbor->GetHeuristic(), neighbor));
+
+                if(neighbor != nullptr)
+                    pq.push(std::make_pair(newCost + neighbor->GetHeuristic(), neighbor));
             }
         }
     }
