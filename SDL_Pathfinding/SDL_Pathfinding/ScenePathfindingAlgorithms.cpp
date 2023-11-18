@@ -6,7 +6,7 @@ ScenePathfindingAlgorithms::ScenePathfindingAlgorithms()
 	maze = new Grid("../res/maze.csv");
 
 	//TEST
-	Graph test = Graph(maze);
+	graph = new Graph(maze);
 	//
 
 	loadTextures("../res/maze.png", "../res/coin.png");
@@ -28,14 +28,26 @@ ScenePathfindingAlgorithms::ScenePathfindingAlgorithms()
 	*/
 
 	//Set agent position as random node
+	/*
 	agentPositionNodeWithID = graph->GetRandomNodeWithID();
 	agents[0]->setPosition(graph->CellToPix(
 		agentPositionNodeWithID.second->GetCell())
 	);
+	*/
+
+	agentPositionID = graph->GetRandomNodeID();
+	agents[0]->setPosition(graph->CellToPix(
+		graph->GetNodeFromId(agentPositionID).second->GetCell()
+	));
 
 	//Set the coin position as random node
+	/*
 	coinPositionNodeWithID = graph->GetRandomNodeWithID();
 	coinPosition = coinPositionNodeWithID.second->GetCell();
+	*/
+
+	coinPositionID = graph->GetRandomNodeID();
+	coinPosition = graph->GetNodeFromId(coinPositionID).second->GetCell();
 
 	// set the coin in a random cell (but at least 3 cells far from the agent)
 	/*

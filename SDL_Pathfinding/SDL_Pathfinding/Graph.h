@@ -19,6 +19,7 @@ public:
 	std::pair<std::string, Node*> GetNodeFromId(std::string id);
 	Vector2D CellToPix(Vector2D cell);
 	std::pair<std::string, Node*> GetRandomNodeWithID();
+	std::string GetRandomNodeID();
 
 private:
 	std::vector<Connection*> InitializeConnections(std::map<std::pair<std::string, std::string>, int> connectionsInfo);

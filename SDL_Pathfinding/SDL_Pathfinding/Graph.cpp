@@ -191,6 +191,13 @@ std::pair<std::string, Node*> Graph::GetRandomNodeWithID()
 	return std::make_pair(item->first, nodes[item->first]);
 }
 
+std::string Graph::GetRandomNodeID()
+{
+	int index = GetRandomIndex(unavailableNames.size());
+	std::cout << unavailableNames[index];
+	return unavailableNames[index];
+}
+
 std::vector<Connection*> Graph::InitializeConnections(std::map<std::pair<std::string, std::string>, int> connectionsInfo)
 {
 	std::vector<Connection*> returnedConnections;
@@ -252,5 +259,5 @@ std::string Graph::GenerateValidNodeName(int charAmount)
 
 int Graph::GetRandomIndex(int size)
 {
-	return std::rand() % ((size - 1)+1 - 0) + 0;
+	return rand() % size;
 }
