@@ -11,25 +11,31 @@
 #include "Grid.h"
 
 class ScenePathFindingMouse :
-	public Scene
+    public Scene
 {
 public:
-	ScenePathFindingMouse();
-	~ScenePathFindingMouse();
-	void update(float dtime, SDL_Event *event);
-	void draw();
-	const char* getTitle();
+    ScenePathFindingMouse();
+    ~ScenePathFindingMouse();
+    void update(float dtime, SDL_Event* event);
+    void draw();
+    const char* getTitle();
 private:
-	std::vector<Agent*> agents;
-	Vector2D coinPosition;
+    std::vector<Agent*> agents;
+    Vector2D coinPosition;
 
-	Grid *maze;
-	bool draw_grid;
-		
-	void drawMaze();
-	void drawCoin();
-	SDL_Texture *background_texture;
-	SDL_Texture *coin_texture;
-	bool loadTextures(char* filename_bg, char* filename_coin);
+    Grid* maze;
+    bool draw_grid;
+
+    void drawMaze();
+    void drawCoin();
+    SDL_Texture* background_texture;
+    SDL_Texture* coin_texture;
+    bool loadTextures(char* filename_bg, char* filename_coin);
+
+
+    void movementEnemies();
+    int agent1PathIndex;
+    int agent2PathIndex;
+
 
 };
