@@ -34,6 +34,7 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             while (currentNode != nullptr)
             {
                 path->points.insert(path->points.begin(), currentNode->GetCell());
+                path->points.push_back(currentNode->GetCell());
                 std::cout << currentNode->GetId() << " ";
                 currentNode = parentMap[currentNode];
             }
@@ -42,6 +43,7 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
 
             return path;
         }
+
 
         // Get the connections of the current node from the graph
         std::vector<Connection*> connections = graph->GetConnections(current->GetId());
