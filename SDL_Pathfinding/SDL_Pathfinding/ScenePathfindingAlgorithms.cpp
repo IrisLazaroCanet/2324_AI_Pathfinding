@@ -95,21 +95,33 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 		{
 			//BFS
 			PC->SetAlgorithmToBFS();
-			PC->FindPath(new Graph(), new Node(), new Node());
+			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
+			for (int i = 0; i < newPath->points.size(); i++)
+			{
+				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));
+			}
 		}
 
 		if (event->key.keysym.scancode == SDL_SCANCODE_D)
 		{
 			//Dijkstra
 			PC->SetAlgorithmToDijkstra();
-			PC->FindPath(new Graph(), new Node(), new Node());
+			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
+			for (int i = 0; i < newPath->points.size(); i++)
+			{
+				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));
+			}
 		}
 
 		if (event->key.keysym.scancode == SDL_SCANCODE_G)
 		{
 			//Greedy
 			PC->SetAlgorithmToGreedy();
-			PC->FindPath(new Graph(), new Node(), new Node());
+			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
+			for (int i = 0; i < newPath->points.size(); i++)
+			{
+				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));
+			}
 		}
 		break;
 	}
