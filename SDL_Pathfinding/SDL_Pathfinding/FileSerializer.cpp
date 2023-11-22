@@ -22,15 +22,16 @@ void FileSerializer::WriteMapToTextFile(const char* path, std::map<std::string, 
     std::ofstream outputFile(path, std::ios::out | std::ios::app);
     if (outputFile.is_open())
     {
-        outputFile << "Instance #";
-        outputFile << instanceNumber;
-        outputFile << '\n\n';
+        outputFile << "INSTANCE #" << instanceNumber << std::endl;
         for (std::map<std::string, int>::iterator it = map.begin(); it != map.end(); it++)
         {
             outputFile << it->first;
             outputFile << ' ';
             outputFile << it->second;
+            outputFile << std::endl;
         }
+
+        outputFile << std::endl;
 
         outputFile.close();
     }

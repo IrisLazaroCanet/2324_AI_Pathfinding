@@ -35,7 +35,9 @@ ScenePathfindingComparison::~ScenePathfindingComparison()
 void ScenePathfindingComparison::update(float dtime, SDL_Event* event)
 {
 	SolveProblems();
-	SaveResultsToFile();
+
+	if (!savedToFile)
+		SaveResultsToFile();
 }
 
 void ScenePathfindingComparison::draw()
@@ -62,8 +64,6 @@ void ScenePathfindingComparison::SolveProblems()
 
 		finishedComputing = true;
 	}
-
-	SaveResultsToFile();
 }
 
 void ScenePathfindingComparison::SaveResultsToFile()
@@ -72,6 +72,8 @@ void ScenePathfindingComparison::SaveResultsToFile()
 	{
 		FS->WriteMapToTextFile("problem_results.txt", problemInstances[i]->GetExploredNodes(), i);
 	}
+
+	savedToFile = true;
 }
 
 Graph* ScenePathfindingComparison::InitializeGraph(Grid* grid)

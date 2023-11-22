@@ -33,5 +33,6 @@ private:
 	std::map<std::string, FrontierElement*> frontier;
 
 	bool finishedComputing;
+	bool savedToFile = false;
 	const int NUM_INSTANCES = 20;
 };
