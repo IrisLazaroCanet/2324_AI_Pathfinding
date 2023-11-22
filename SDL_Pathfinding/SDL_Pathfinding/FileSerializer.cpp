@@ -17,7 +17,21 @@ FileSerializer* FileSerializer::GetInstance()
     return instance;
 }
 
-void FileSerializer::WriteMapToBinaryFile(const char* path, std::map<std::string, int> map)
+void FileSerializer::WriteMapToTextFile(const char* path, std::map<std::string, int> map, int instanceNumber)
 {
-    //TODO: Save data in file
+    std::ofstream outputFile(path, std::ios::out | std::ios::app);
+    if (outputFile.is_open())
+    {
+        outputFile << "Instance #";
+        outputFile << instanceNumber;
+        outputFile << '\n\n';
+        for (std::map<std::string, int>::iterator it = map.begin(); it != map.end(); it++)
+        {
+            outputFile << it->first;
+            outputFile << ' ';
+            outputFile << it->second;
+        }
+
+        outputFile.close();
+    }
 }

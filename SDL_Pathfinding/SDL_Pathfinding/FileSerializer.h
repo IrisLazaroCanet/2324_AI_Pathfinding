@@ -1,6 +1,7 @@
 #pragma once
 #include <map>
 #include <string>
+#include <fstream>
 
 #define FS FileSerializer::GetInstance()
 
@@ -13,5 +14,5 @@ private:
 public:
 	static FileSerializer* GetInstance();
 
-	void WriteMapToBinaryFile(const char* path, std::map<std::string, int> map);
+	void WriteMapToTextFile(const char* path, std::map<std::string, int> map, int instanceNumber);
 };

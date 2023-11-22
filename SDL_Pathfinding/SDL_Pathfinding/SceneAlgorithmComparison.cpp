@@ -62,13 +62,15 @@ void ScenePathfindingComparison::SolveProblems()
 
 		finishedComputing = true;
 	}
+
+	SaveResultsToFile();
 }
 
 void ScenePathfindingComparison::SaveResultsToFile()
 {
 	for (int i = 0; i < (int)problemInstances.size(); i++)
 	{
-		FS->WriteMapToBinaryFile("problem_results.txt", problemInstances[i]->GetExploredNodes());
+		FS->WriteMapToTextFile("problem_results.txt", problemInstances[i]->GetExploredNodes(), i);
 	}
 }
 
