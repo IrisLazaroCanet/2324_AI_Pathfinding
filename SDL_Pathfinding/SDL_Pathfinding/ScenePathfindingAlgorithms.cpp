@@ -128,9 +128,7 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 
 	agents[0]->update(dtime, event);
 
-	//Remove this code, in order to let the user check different algorithms with the same instance of the problem
-	//If we have arrived to the coin, reset the agent's position
-	
+	//If we have arrived to the coin, reset the agent's position	
 	if ((agents[0]->getCurrentTargetIndex() == -1) && (maze->pix2cell(agents[0]->getPosition()) == coinPosition))
 	{
 		agents[0]->setPosition(graph->CellToPix(

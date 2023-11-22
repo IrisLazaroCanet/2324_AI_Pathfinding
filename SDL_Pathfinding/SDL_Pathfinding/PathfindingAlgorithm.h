@@ -16,10 +16,11 @@ public:
 
 	int GetExploredNodes() { return (int)visited.size(); }
 
-private:
+protected:
 	//TODO: Check if vector is the appropiate data structure
 	std::vector<Node*> frontier;
 
 	//TODO: Check if vector is the approapiate data structure
-	std::vector<Node*> visited;
+	//std::vector<Node*> visited;
+	std::map<std::string, bool> visited;
 };

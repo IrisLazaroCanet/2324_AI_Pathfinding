@@ -19,6 +19,8 @@ Path* GreedyAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
         Node* current = pq.top().second;
         pq.pop();
 
+        visited[current->GetId()] = true;
+
         // If the goal node is reached, construct the path and return it
         if (current->GetCell() == goal->GetCell())
         {
@@ -31,7 +33,6 @@ Path* GreedyAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
                 path->points.insert(path->points.begin(), currentNode->GetCell());
                 currentNode = parentMap[currentNode];
             }
-            std::cout << "\n";
             return path;
         }
 

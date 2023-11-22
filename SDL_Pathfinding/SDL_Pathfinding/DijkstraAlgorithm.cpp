@@ -24,6 +24,8 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
         float currentDistance = pq.top().first;
         pq.pop();
 
+        visited[current->GetId()] = true;
+
         // If the goal node is reached, construct the path and return it
         if (current->GetCell() == goal->GetCell())
         {
@@ -38,8 +40,6 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
                 std::cout << currentNode->GetId() << " ";
                 currentNode = parentMap[currentNode];
             }
-
-            std::cout << "\n";
 
             return path;
         }

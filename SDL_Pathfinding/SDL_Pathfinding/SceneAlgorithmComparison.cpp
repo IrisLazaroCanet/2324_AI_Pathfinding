@@ -52,16 +52,15 @@ void ScenePathfindingComparison::SolveProblems()
 {
 	if (!finishedComputing)
 	{
-		std::cout << "START COMPUTING\n" << std::endl;
 		for (int i = 0; i < (int)problemInstances.size(); i++)
 		{
-			std::cout << "Solve instance #" << i << std::endl;
+			std::cout << "SOLVE INSTANCE #" << i << std::endl;
 			problemInstances[i]->SolveProblem();
 			std::cout << "\n" << std::endl;
+
 		}
 
 		finishedComputing = true;
-		std::cout << "FINISHED COMPUTING" << std::endl;
 	}
 }
 
