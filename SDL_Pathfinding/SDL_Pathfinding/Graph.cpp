@@ -35,7 +35,7 @@ Graph::Graph(Grid* grid)
 			{
 				std::string name = GenerateValidNodeName(10);
 				namedPositions.push_back(std::make_pair(name, grid->getTerrain()[i][j]));
-				nodes[name] = new Node(Vector2D(i, j), name);
+				nodes[name] = new Node(Vector2D(j, i), name);
 			}
 			else
 				namedPositions.push_back(std::make_pair("", grid->getTerrain()[i][j]));
@@ -197,7 +197,6 @@ std::pair<std::string, Node*> Graph::GetRandomNodeWithID()
 std::string Graph::GetRandomNodeID()
 {
 	int index = GetRandomIndex(unavailableNames.size());
-	std::cout << unavailableNames[index];
 	return unavailableNames[index];
 }
 

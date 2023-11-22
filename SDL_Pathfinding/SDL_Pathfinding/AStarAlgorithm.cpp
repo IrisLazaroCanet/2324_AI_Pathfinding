@@ -35,7 +35,7 @@ Path* AStarAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
                 //TODO: Path sols retorna un node (l'últim)
                 path->points.insert(path->points.begin(), currentNode->GetCell());
                 path->points.push_back(currentNode->GetCell());
-                std::cout << currentNode->GetId() << " ";
+                //std::cout << currentNode->GetId() << " ";
                 currentNode = parentMap[currentNode];
             }
 
