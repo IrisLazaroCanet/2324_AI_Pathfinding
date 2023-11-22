@@ -9,6 +9,7 @@ Path* GreedyAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
 
     // Create a map to keep track of parents for backtracking
     std::map<Node*, Node*> parentMap;
+    parentMap[origin] = nullptr;
 
     // Push the origin node with the heuristic distance to the goal to the priority queue
     pq.push(std::make_pair(origin->GetHeuristic(), origin));
