@@ -37,6 +37,8 @@ Path* AStarAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
                 currentNode = parentMap[currentNode];
             }
 
+            std::cout << "Explored nodes: " << visited.size() << std::endl;
+
             return path;
         }
 

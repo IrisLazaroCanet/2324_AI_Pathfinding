@@ -33,6 +33,9 @@ Path* GreedyAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
                 path->points.insert(path->points.begin(), currentNode->GetCell());
                 currentNode = parentMap[currentNode];
             }
+
+            std::cout << "Explored nodes: " << visited.size() << std::endl;
+
             return path;
         }
 

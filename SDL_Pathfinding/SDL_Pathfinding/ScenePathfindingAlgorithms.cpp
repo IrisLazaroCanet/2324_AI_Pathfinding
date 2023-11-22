@@ -135,8 +135,6 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 			graph->GetNodeFromId(agentPositionID).second->GetCell()
 		));
 	}
-	
-
 }
 
 void ScenePathfindingAlgorithms::draw()
