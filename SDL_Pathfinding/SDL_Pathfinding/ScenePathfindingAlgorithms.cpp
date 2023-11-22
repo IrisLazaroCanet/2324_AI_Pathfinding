@@ -129,16 +129,15 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 	agents[0]->update(dtime, event);
 
 	//Remove this code, in order to let the user check different algorithms with the same instance of the problem
-	// if we have arrived to the coin, replace it in a random cell!
-	/*
+	//If we have arrived to the coin, reset the agent's position
+	
 	if ((agents[0]->getCurrentTargetIndex() == -1) && (maze->pix2cell(agents[0]->getPosition()) == coinPosition))
 	{
-		coinPosition = Vector2D(-1, -1);
-		while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, maze->pix2cell(agents[0]->getPosition())) < 3))
-			//coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-			coinPosition = graph->GetNodeFromId(coinPositionID).second->GetCell();
+		agents[0]->setPosition(graph->CellToPix(
+			graph->GetNodeFromId(agentPositionID).second->GetCell()
+		));
 	}
-	*/
+	
 
 }
 

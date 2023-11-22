@@ -23,7 +23,6 @@ Path* BFSAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             Node* currentNode = current;
 
             // Backtrack from the goal to the origin using parentMap
-            //TODO: Revisar ordre d'insert dins el path
             while (currentNode != nullptr)
             {
                 path->points.insert(path->points.begin(), currentNode->GetCell());
