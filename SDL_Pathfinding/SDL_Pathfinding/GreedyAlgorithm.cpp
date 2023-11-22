@@ -29,7 +29,6 @@ Path* GreedyAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             while (currentNode != nullptr)
             {
                 path->points.insert(path->points.begin(), currentNode->GetCell());
-                std::cout << currentNode->GetId() << " ";
                 currentNode = parentMap[currentNode];
             }
             std::cout << "\n";

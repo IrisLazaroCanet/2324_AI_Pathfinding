@@ -34,7 +34,7 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             while (currentNode != nullptr)
             {
                 path->points.insert(path->points.begin(), currentNode->GetCell());
-                path->points.push_back(currentNode->GetCell());
+                //path->points.push_back(currentNode->GetCell());
                 std::cout << currentNode->GetId() << " ";
                 currentNode = parentMap[currentNode];
             }

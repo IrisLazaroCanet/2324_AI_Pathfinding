@@ -27,8 +27,6 @@ Path* BFSAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             while (currentNode != nullptr)
             {
                 path->points.insert(path->points.begin(), currentNode->GetCell());
-                path->points.push_back(currentNode->GetCell());
-                std::cout << currentNode->GetCell().x << ", " << currentNode->GetCell().y << std::endl;
                 currentNode = parentMap[currentNode];
             }
             std::cout << "\n";
