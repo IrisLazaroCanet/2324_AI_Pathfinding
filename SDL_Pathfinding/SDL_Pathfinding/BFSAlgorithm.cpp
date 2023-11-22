@@ -9,6 +9,7 @@ Path* BFSAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
 
     // Create a map to keep track of parents for backtracking
     std::map<Node*, Node*> parentMap;
+    parentMap[origin] = nullptr;
 
     while (!queue.empty())
     {
@@ -26,7 +27,8 @@ Path* BFSAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             while (currentNode != nullptr)
             {
                 path->points.insert(path->points.begin(), currentNode->GetCell());
-                std::cout << currentNode->GetId() << " ";
+                path->points.push_back(currentNode->GetCell());
+                std::cout << currentNode->GetCell().x << ", " << currentNode->GetCell().y << std::endl;
                 currentNode = parentMap[currentNode];
             }
             std::cout << "\n";
