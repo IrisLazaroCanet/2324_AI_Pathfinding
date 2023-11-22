@@ -4,10 +4,7 @@ ScenePathfindingAlgorithms::ScenePathfindingAlgorithms()
 {
 	draw_grid = false;
 	maze = new Grid("../res/maze.csv");
-
-	//TEST
 	graph = new Graph(maze);
-	//
 
 	loadTextures("../res/maze.png", "../res/coin.png");
 
