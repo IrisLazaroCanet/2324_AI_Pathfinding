@@ -64,27 +64,29 @@ Graph::Graph(Grid* grid)
 	{
 		for (int j = 0; j < rowData[i].size(); j++)
 		{
-			//Check connection with previous (left) node
-			if (j % grid->getNumCellX() != 0)
+			if (rowData[i][j].first != "")
 			{
-				if (rowData[i][j - 1].first != "")
+				//Check connection with previous (left) node
+				if (j % grid->getNumCellX() != 0)
 				{
-					//Create connection (cost always 1 for now)
-					connections.push_back(new Connection(1, rowData[i][j - 1].first, rowData[i][j].first));
+					if (rowData[i][j - 1].first != "")
+					{
+						//Create connection (cost always 1 for now)
+						connections.push_back(new Connection(1, rowData[i][j - 1].first, rowData[i][j].first));
+					}
 				}
-			}
 
-			//Check connection with next (right) node
-			if (j % grid->getNumCellX() != grid->getNumCellX() - 1)
-			{
-				if (rowData[i][j + 1].first != "")
+				//Check connection with next (right) node
+				if (j % grid->getNumCellX() != grid->getNumCellX() - 1)
 				{
-					//Create connection (cost always 1 for now)
-					connections.push_back(new Connection(1, rowData[i][j + 1].first, rowData[i][j].first));
+					if (rowData[i][j + 1].first != "")
+					{
+						//Create connection (cost always 1 for now)
+						connections.push_back(new Connection(1, rowData[i][j + 1].first, rowData[i][j].first));
+					}
 				}
 			}
 		}
-		std::cout << "\n";
 		/*
 		//Check connection with previous (left) node
 		if (i % grid->getNumCellX() != 0)
@@ -122,23 +124,26 @@ Graph::Graph(Grid* grid)
 	{
 		for (int j = 0; j < colData[i].size(); j++)
 		{
-			//Check connection with previous (up) node
-			if (j % grid->getNumCellY() != 0)
+			if (colData[i][j].first != "")
 			{
-				if (colData[i][j - 1].first != "")
+				//Check connection with previous (up) node
+				if (j % grid->getNumCellY() != 0)
 				{
-					//Create connection (cost always 1 for now)
-					connections.push_back(new Connection(1, colData[i][j - 1].first, colData[i][j].first));
+					if (colData[i][j - 1].first != "")
+					{
+						//Create connection (cost always 1 for now)
+						connections.push_back(new Connection(1, colData[i][j - 1].first, colData[i][j].first));
+					}
 				}
-			}
 
-			//Check connection with next (down) node
-			if (j % grid->getNumCellY() != grid->getNumCellY() - 1)
-			{
-				if (colData[i][j + 1].first != "")
+				//Check connection with next (down) node
+				if (j % grid->getNumCellY() != grid->getNumCellY() - 1)
 				{
-					//Create connection (cost always 1 for now)
-					connections.push_back(new Connection(1, colData[i][j + 1].first, colData[i][j].first));
+					if (colData[i][j + 1].first != "")
+					{
+						//Create connection (cost always 1 for now)
+						connections.push_back(new Connection(1, colData[i][j + 1].first, colData[i][j].first));
+					}
 				}
 			}
 		}
