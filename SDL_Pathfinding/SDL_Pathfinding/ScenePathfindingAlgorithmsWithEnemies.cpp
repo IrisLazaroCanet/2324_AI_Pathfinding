@@ -39,7 +39,16 @@ ScenePathfindingAlgorithmsWithEnemies::ScenePathfindingAlgorithmsWithEnemies()
 	agents.push_back(otherAgent2);
 
 
-	agents[1]->setPosition(Vector2D(80, 210));
+	agents[1]->setPosition(graph->CellToPix(Vector2D(8, 2)));
+	std::vector<Vector2D> points;
+	points.push_back(Vector2D(8, 3));
+	points.push_back(Vector2D(8, 4));
+	points.push_back(Vector2D(8, 5));
+	for (int i = 0; i < points.size(); i++)
+	{
+		agents[1]->addPathPoint(graph->CellToPix(points[i]));
+	}
+
 	agents[2]->setPosition(Vector2D(1200, 700));
 }
 
@@ -124,7 +133,7 @@ void ScenePathfindingAlgorithmsWithEnemies::update(float dtime, SDL_Event* event
 		));
 	}
 
-	movementEnemies();
+	//movementEnemies();
 	agents[1]->update(dtime, event);
 	agents[2]->update(dtime, event);
 }
