@@ -1,6 +1,5 @@
 #include "DijkstraAlgorithm.h"
 
-
 Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
 {
     std::cout << "Calculate path using Dijkstra algorithm" << std::endl;
@@ -27,7 +26,7 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
         visited[current->GetId()] = true;
 
         // If the goal node is reached, construct the path and return it
-        if (current->GetCell() == goal->GetCell())
+        if (current == goal)
         {
             Path* path = new Path;
             Node* currentNode = current;
@@ -36,8 +35,6 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             while (currentNode != nullptr)
             {
                 path->points.insert(path->points.begin(), currentNode->GetCell());
-                //path->points.push_back(currentNode->GetCell());
-                std::cout << currentNode->GetId() << " ";
                 currentNode = parentMap[currentNode];
             }
 
@@ -45,7 +42,6 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
 
             return path;
         }
-
 
         // Get the connections of the current node from the graph
         std::vector<Connection*> connections = graph->GetConnections(current->GetId());
@@ -57,8 +53,8 @@ Path* DijkstraAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             // Calculate the new distance to the neighbor through the current node
             float newDistance = currentDistance + connection->GetCost();
 
-            // If the new distance is shorter, update it and push to the priority queue
-            if (newDistance < distance[neighbor])
+            // If the neighbor node has not been visited or a shorter path is found
+            if (!visited[neighbor->GetId()] && (distance.find(neighbor) == distance.end() || newDistance < distance[neighbor]))
             {
                 distance[neighbor] = newDistance;
                 parentMap[neighbor] = current;
