@@ -5,6 +5,7 @@
 #include "SDL_SimpleApp.h"
 #include "ScenePathFindingMouse.h"
 #include "ScenePathfindingAlgorithms.h"
+#include "ScenePathfindingAlgorithmsWithEnemies.h"
 #include "SceneAlgorithmComparison.h"
 
 #include "HeuristicCalculator.h"
@@ -61,10 +62,16 @@ int main(int argc, char ** argv)
 			if (event.key.keysym.scancode == SDL_SCANCODE_3)
 			{
 				delete(curr_scene);
-				curr_scene = new ScenePathfindingComparison;
+				curr_scene = new ScenePathfindingAlgorithmsWithEnemies;
 				app->setWindowTitle(curr_scene->getTitle());
 			}
 			if (event.key.keysym.scancode == SDL_SCANCODE_4)
+			{
+				delete(curr_scene);
+				curr_scene = new ScenePathfindingComparison;
+				app->setWindowTitle(curr_scene->getTitle());
+			}
+			if (event.key.keysym.scancode == SDL_SCANCODE_5)
 			{
 				//TODO: Remove this test
 				HC->SetFunctionToDiagonal();

@@ -153,6 +153,7 @@
     <ClCompile Include="PathFollowing.cpp" />
     <ClCompile Include="SceneAlgorithmComparison.cpp" />
     <ClCompile Include="ScenePathfindingAlgorithms.cpp" />
+    <ClCompile Include="ScenePathfindingAlgorithmsWithEnemies.cpp" />
     <ClCompile Include="ScenePathFindingMouse.cpp" />
     <ClCompile Include="SDL_SimpleApp.cpp" />
     <ClCompile Include="Seek.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneAlgorithmComparison.h" />
     <ClInclude Include="ScenePathfindingAlgorithms.h" />
+    <ClInclude Include="ScenePathfindingAlgorithmsWithEnemies.h" />
     <ClInclude Include="ScenePathFindingMouse.h" />
     <ClInclude Include="SDL_SimpleApp.h" />
     <ClInclude Include="Seek.h" />
