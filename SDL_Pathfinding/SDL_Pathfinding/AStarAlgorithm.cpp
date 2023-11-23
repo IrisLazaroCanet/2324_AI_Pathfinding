@@ -3,6 +3,7 @@
 Path* AStarAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
 {
     std::cout << "Calculate path using A star algorithm" << std::endl;
+    HC->SetFunctionToManhattan();
 
     // Create a priority queue for A*
     std::priority_queue<std::pair<float, Node*>, std::vector<std::pair<float, Node*>>, std::greater<std::pair<float, Node*>>> pq;
@@ -15,7 +16,8 @@ Path* AStarAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
     costSoFar[origin] = 0.0f;
 
     // Push the origin node with the estimated total cost (g + h) to the priority queue
-    pq.push(std::make_pair(costSoFar[origin] + origin->GetHeuristic(), origin));
+    //pq.push(std::make_pair(costSoFar[origin] + origin->GetHeuristic(), origin));
+    pq.push(std::make_pair(costSoFar[origin] + HC->CalculateHeuristic(origin->GetCell(), goal->GetCell()), origin));
 
     while (!pq.empty())
     {
@@ -58,7 +60,8 @@ Path* AStarAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
                 parentMap[neighbor] = current;
 
                 if(neighbor != nullptr)
-                    pq.push(std::make_pair(newCost + neighbor->GetHeuristic(), neighbor));
+                    //pq.push(std::make_pair(newCost + neighbor->GetHeuristic(), neighbor));
+                    pq.push(std::make_pair(newCost + HC->CalculateHeuristic(neighbor->GetCell(), goal->GetCell()), neighbor));
             }
         }
     }

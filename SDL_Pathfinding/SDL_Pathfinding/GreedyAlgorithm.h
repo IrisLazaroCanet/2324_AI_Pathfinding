@@ -1,5 +1,6 @@
 #pragma once
 #include "PathfindingAlgorithm.h"
+#include "HeuristicCalculator.h"
 
 class GreedyAlgorithm : public PathfindingAlgorithm
 {

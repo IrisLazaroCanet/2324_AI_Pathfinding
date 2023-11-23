@@ -1,9 +1,7 @@
 #include "DiagonalDistance.h"
 
 float DiagonalDistance::CalculateHeuristic(Vector2D point, Vector2D goal, float d_param)
-{
-    std::cout << "Calculate diagonal distance" << std::endl;
-    
+{    
     //TODO: revisar assignació de d2_param
     float d2_param = d_param;
 

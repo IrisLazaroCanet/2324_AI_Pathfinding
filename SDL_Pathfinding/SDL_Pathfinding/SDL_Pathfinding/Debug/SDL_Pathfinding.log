@@ -1,23 +1,4 @@
 ﻿  AStarAlgorithm.cpp
-  BFSAlgorithm.cpp
-  DijkstraAlgorithm.cpp
-  Graph.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(30,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(32,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(38,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(38,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(54,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(65,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(67,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(77,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(87,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(113,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(125,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(127,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(137,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(147,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(271,12): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(272,10): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   GreedyAlgorithm.cpp
   PathCalculator.cpp
   PathfindingProblem.cpp
@@ -35,5 +16,4 @@ C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Art
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(115,22): warning C4018: '<': signed/unsigned mismatch
   main.cpp
   Generating Code...
-  LINK : C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\\bin\SDL_Pathfinding.exe not found or not built by the last incremental link; performing full link
   SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe

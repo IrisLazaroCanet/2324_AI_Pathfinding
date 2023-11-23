@@ -3,6 +3,7 @@
 Path* GreedyAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
 {
     std::cout << "Calculate path using Greedy algorithm" << std::endl;
+    HC->SetFunctionToManhattan();
 
     // Create a priority queue for GBFS
     std::priority_queue<std::pair<float, Node*>, std::vector<std::pair<float, Node*>>, std::greater<std::pair<float, Node*>>> pq;
@@ -12,7 +13,8 @@ Path* GreedyAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
     parentMap[origin] = nullptr;
 
     // Push the origin node with the heuristic distance to the goal to the priority queue
-    pq.push(std::make_pair(origin->GetHeuristic(), origin));
+    //pq.push(std::make_pair(origin->GetHeuristic(), origin));
+    pq.push(std::make_pair(HC->CalculateHeuristic(origin->GetCell(), goal->GetCell()), origin));
 
     while (!pq.empty())
     {
@@ -50,7 +52,7 @@ Path* GreedyAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
             if (parentMap.find(neighbor) == parentMap.end())
             {
                 parentMap[neighbor] = current;
-                pq.push(std::make_pair(neighbor->GetHeuristic(), neighbor));
+                pq.push(std::make_pair(HC->CalculateHeuristic(neighbor->GetCell(), goal->GetCell()), neighbor));
             }
         }
     }
