@@ -42,6 +42,8 @@ Graph::Graph(Grid* grid)
 		}
 	}
 
+	float connectionWeight;
+
 	//Fill rows
 	int rowNum = 0;
 	for (int i = 0; i < grid->getNumCellY(); i++)
@@ -71,8 +73,8 @@ Graph::Graph(Grid* grid)
 				{
 					if (rowData[i][j - 1].first != "")
 					{
-						//Create connection (cost always 1 for now)
-						connections.push_back(new Connection(1, rowData[i][j - 1].first, rowData[i][j].first));
+						connectionWeight = GenerateRandomWeight();
+						connections.push_back(new Connection(connectionWeight, rowData[i][j - 1].first, rowData[i][j].first));
 					}
 				}
 
@@ -81,8 +83,8 @@ Graph::Graph(Grid* grid)
 				{
 					if (rowData[i][j + 1].first != "")
 					{
-						//Create connection (cost always 1 for now)
-						connections.push_back(new Connection(1, rowData[i][j + 1].first, rowData[i][j].first));
+						connectionWeight = GenerateRandomWeight();
+						connections.push_back(new Connection(connectionWeight, rowData[i][j + 1].first, rowData[i][j].first));
 					}
 				}
 			}
@@ -131,8 +133,8 @@ Graph::Graph(Grid* grid)
 				{
 					if (colData[i][j - 1].first != "")
 					{
-						//Create connection (cost always 1 for now)
-						connections.push_back(new Connection(1, colData[i][j - 1].first, colData[i][j].first));
+						connectionWeight = GenerateRandomWeight();
+						connections.push_back(new Connection(connectionWeight, colData[i][j - 1].first, colData[i][j].first));
 					}
 				}
 
@@ -141,8 +143,8 @@ Graph::Graph(Grid* grid)
 				{
 					if (colData[i][j + 1].first != "")
 					{
-						//Create connection (cost always 1 for now)
-						connections.push_back(new Connection(1, colData[i][j + 1].first, colData[i][j].first));
+						connectionWeight = GenerateRandomWeight();
+						connections.push_back(new Connection(connectionWeight, colData[i][j + 1].first, colData[i][j].first));
 					}
 				}
 			}
@@ -262,4 +264,11 @@ std::string Graph::GenerateValidNodeName(int charAmount)
 int Graph::GetRandomIndex(int size)
 {
 	return rand() % size;
+}
+
+float Graph::GenerateRandomWeight()
+{
+	int range = MAX_WEIGHT - MIN_WEIGHT + 1;
+	int num = rand() % range + MIN_WEIGHT;
+	return (float)num;
 }

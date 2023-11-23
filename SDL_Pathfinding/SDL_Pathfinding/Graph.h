@@ -26,9 +26,13 @@ private:
 	std::string GenerateNodeName(int charAmount);
 	std::string GenerateValidNodeName(int charAmount);
 	int GetRandomIndex(int size);
+	float GenerateRandomWeight();
 
 	std::vector<std::string> unavailableNames;
 
 	std::map<std::string, Node*> nodes;
 	std::vector<Connection*> connections;	
+
+	const float MIN_WEIGHT = 1.f;
+	const float MAX_WEIGHT = 8.f;
 };
