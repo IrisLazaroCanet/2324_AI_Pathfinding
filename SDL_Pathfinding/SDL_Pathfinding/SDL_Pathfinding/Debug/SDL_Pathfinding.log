@@ -1,19 +1,2 @@
-﻿  AStarAlgorithm.cpp
-  GreedyAlgorithm.cpp
-  PathCalculator.cpp
-  PathfindingProblem.cpp
-  SceneAlgorithmComparison.cpp
-  ScenePathfindingAlgorithms.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(85,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(96,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(107,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(118,22): warning C4018: '<': signed/unsigned mismatch
-  ScenePathfindingAlgorithmsWithEnemies.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(47,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(82,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(93,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(104,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(115,22): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
-  Generating Code...
+﻿  DijkstraAlgorithm.cpp
   SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe
