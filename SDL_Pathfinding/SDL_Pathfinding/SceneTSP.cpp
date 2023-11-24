@@ -60,7 +60,7 @@ void SceneTSP::update(float dtime, SDL_Event* event)
 	}
 
 
-	while (!coinPositionIDs.empty())
+	if (!coinPositionIDs.empty())
 	{
 		//Calculate closest node
 		closestNodeID = FindClosestNodeID(agentPositionID);
@@ -71,11 +71,13 @@ void SceneTSP::update(float dtime, SDL_Event* event)
 			agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
 		}
 
-		agents[0]->update(dtime, event);
 
 		//When the agent has arrived to the goal, update its ID to match the goal's
 		agentPositionID = closestNodeID;
 	}
+
+	agents[0]->update(dtime, event);
+
 }
 
 void SceneTSP::draw()
