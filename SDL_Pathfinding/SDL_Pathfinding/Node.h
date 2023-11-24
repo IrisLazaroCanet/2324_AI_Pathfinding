@@ -29,6 +29,10 @@ public:
     Node(Vector2D _cell, std::string _id) : cell(_cell), id(_id), heuristic(1.0f) { }
     ~Node() { }
 
+
+    bool enemyClose = false;  // Add a variable to track if an enemy is close
+
+
     // Set the heuristic value
     void SetHeuristic(float _heuristic) { heuristic = _heuristic; }
 

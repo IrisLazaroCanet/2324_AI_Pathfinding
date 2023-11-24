@@ -1,2 +1,25 @@
-﻿  SceneAlgorithmComparison.cpp
-  SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe
+﻿  Graph.cpp
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(30,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(32,21): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(38,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(38,37): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(55,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(66,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(68,21): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(80,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(90,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(116,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(128,20): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(130,21): warning C4018: '<': no coinciden signed/unsigned
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(142,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(152,44): warning C4244: 'argumento': conversión de 'float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(332,10): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(333,10): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(338,10): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(339,10): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(344,10): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(345,10): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(350,10): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(351,10): warning C4244: '=': conversión de 'const float' a 'int'; posible pérdida de datos
+D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(322): warning C4715: 'Graph::CalculateZoneFromPoint': no todas las rutas de acceso de control devuelven un valor
+  SDL_Pathfinding.vcxproj -> D:\GitRepos\IA_CDI3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe
