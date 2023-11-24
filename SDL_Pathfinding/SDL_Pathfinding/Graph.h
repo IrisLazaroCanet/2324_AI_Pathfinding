@@ -26,13 +26,23 @@ private:
 	std::string GenerateNodeName(int charAmount);
 	std::string GenerateValidNodeName(int charAmount);
 	int GetRandomIndex(int size);
-	float GenerateRandomWeight();
+	int CalculateZoneFromPoint(int x, int y, Grid* grid);
+	float GenerateRandomWeight(int zone);
 
 	std::vector<std::string> unavailableNames;
 
 	std::map<std::string, Node*> nodes;
 	std::vector<Connection*> connections;	
 
-	const float MIN_WEIGHT = 1.f;
-	const float MAX_WEIGHT = 8.f;
+	const float MIN_WEIGHT_UPPER_LEFT = 1.f;
+	const float MAX_WEIGHT_UPPER_LEFT = 5.f;
+
+	const float MIN_WEIGHT_UPPER_RIGHT = 4.f;
+	const float MAX_WEIGHT_UPPER_RIGHT = 8.f;
+
+	const float MIN_WEIGHT_LOWER_LEFT = 3.f;
+	const float MAX_WEIGHT_LOWER_LEFT = 6.f;
+
+	const float MIN_WEIGHT_LOWER_RIGHT = 6.f;
+	const float MAX_WEIGHT_LOWER_RIGHT = 10.f;
 };

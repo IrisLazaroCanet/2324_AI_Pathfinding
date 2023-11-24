@@ -43,6 +43,7 @@ Graph::Graph(Grid* grid)
 	}
 
 	float connectionWeight;
+	int weightZone;
 
 	//Fill rows
 	int rowNum = 0;
@@ -66,6 +67,8 @@ Graph::Graph(Grid* grid)
 	{
 		for (int j = 0; j < rowData[i].size(); j++)
 		{
+			weightZone = CalculateZoneFromPoint(j, i, grid);
+
 			if (rowData[i][j].first != "")
 			{
 				//Check connection with previous (left) node
@@ -73,7 +76,7 @@ Graph::Graph(Grid* grid)
 				{
 					if (rowData[i][j - 1].first != "")
 					{
-						connectionWeight = GenerateRandomWeight();
+						connectionWeight = GenerateRandomWeight(weightZone);
 						connections.push_back(new Connection(connectionWeight, rowData[i][j - 1].first, rowData[i][j].first));
 					}
 				}
@@ -83,7 +86,7 @@ Graph::Graph(Grid* grid)
 				{
 					if (rowData[i][j + 1].first != "")
 					{
-						connectionWeight = GenerateRandomWeight();
+						connectionWeight = GenerateRandomWeight(weightZone);
 						connections.push_back(new Connection(connectionWeight, rowData[i][j + 1].first, rowData[i][j].first));
 					}
 				}
@@ -126,6 +129,8 @@ Graph::Graph(Grid* grid)
 	{
 		for (int j = 0; j < colData[i].size(); j++)
 		{
+			weightZone = CalculateZoneFromPoint(i, j, grid);
+
 			if (colData[i][j].first != "")
 			{
 				//Check connection with previous (up) node
@@ -133,7 +138,7 @@ Graph::Graph(Grid* grid)
 				{
 					if (colData[i][j - 1].first != "")
 					{
-						connectionWeight = GenerateRandomWeight();
+						connectionWeight = GenerateRandomWeight(weightZone);
 						connections.push_back(new Connection(connectionWeight, colData[i][j - 1].first, colData[i][j].first));
 					}
 				}
@@ -143,7 +148,7 @@ Graph::Graph(Grid* grid)
 				{
 					if (colData[i][j + 1].first != "")
 					{
-						connectionWeight = GenerateRandomWeight();
+						connectionWeight = GenerateRandomWeight(weightZone);
 						connections.push_back(new Connection(connectionWeight, colData[i][j + 1].first, colData[i][j].first));
 					}
 				}
@@ -266,9 +271,51 @@ int Graph::GetRandomIndex(int size)
 	return rand() % size;
 }
 
-float Graph::GenerateRandomWeight()
+int Graph::CalculateZoneFromPoint(int x, int y, Grid* grid)
 {
-	int range = MAX_WEIGHT - MIN_WEIGHT + 1;
-	int num = rand() % range + MIN_WEIGHT;
+	if (x < grid->getNumCellX() / 2 && y < grid->getNumCellY() / 2)
+		return 0;
+	else if (x >= grid->getNumCellX() / 2 && y < grid->getNumCellY() / 2)
+		return 1;
+	else if (x < grid->getNumCellX() / 2 && y >= grid->getNumCellY() / 2)
+		return 2;
+	else if (x >= grid->getNumCellX() / 2 && y >= grid->getNumCellY() / 2)
+		return 3;
+}
+
+float Graph::GenerateRandomWeight(int zone)
+{
+	int max, min;
+
+	switch (zone)
+	{
+		case 0:
+		{
+			max = MAX_WEIGHT_UPPER_LEFT;
+			min = MIN_WEIGHT_UPPER_LEFT;
+			break;
+		}
+		case 1:
+		{
+			max = MAX_WEIGHT_UPPER_RIGHT;
+			min = MIN_WEIGHT_UPPER_RIGHT;
+			break;
+		}
+		case 2:
+		{
+			max = MAX_WEIGHT_LOWER_LEFT;
+			min = MIN_WEIGHT_LOWER_LEFT;
+			break;
+		}
+		case 3:
+		{
+			max = MAX_WEIGHT_LOWER_RIGHT;
+			min = MIN_WEIGHT_LOWER_RIGHT;
+			break;
+		}
+	}
+
+	int range = max - min + 1;
+	int num = rand() % range + min;
 	return (float)num;
 }
