@@ -70,7 +70,7 @@ void ScenePathfindingComparison::SaveResultsToFile()
 {
 	for (int i = 0; i < (int)problemInstances.size(); i++)
 	{
-		FS->WriteMapToTextFile("problem_results.txt", problemInstances[i]->GetExploredNodes(), i);
+		FS->WriteMapToTextFile("../res/problem_results.txt", problemInstances[i]->GetExploredNodes(), i);
 	}
 
 	savedToFile = true;

@@ -1,0 +1,120 @@
+INSTANCE #0
+A* 8
+BFS 13
+Dijkstra 17
+Greedy 4
+
+INSTANCE #1
+A* 306
+BFS 392
+Dijkstra 360
+Greedy 41
+
+INSTANCE #2
+A* 694
+BFS 679
+Dijkstra 710
+Greedy 64
+
+INSTANCE #3
+A* 694
+BFS 679
+Dijkstra 710
+Greedy 73
+
+INSTANCE #4
+A* 694
+BFS 679
+Dijkstra 710
+Greedy 104
+
+INSTANCE #5
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 128
+
+INSTANCE #6
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 142
+
+INSTANCE #7
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 151
+
+INSTANCE #8
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 164
+
+INSTANCE #9
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 205
+
+INSTANCE #10
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 228
+
+INSTANCE #11
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 233
+
+INSTANCE #12
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 282
+
+INSTANCE #13
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 285
+
+INSTANCE #14
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 287
+
+INSTANCE #15
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 298
+
+INSTANCE #16
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 325
+
+INSTANCE #17
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 335
+
+INSTANCE #18
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 374
+
+INSTANCE #19
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 380
+

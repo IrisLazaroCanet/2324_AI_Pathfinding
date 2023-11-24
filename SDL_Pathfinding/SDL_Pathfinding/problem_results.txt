@@ -118,3 +118,123 @@ BFS 710
 Dijkstra 20
 Greedy 699
 
+INSTANCE #0
+A* 422
+BFS 404
+Dijkstra 553
+Greedy 32
+
+INSTANCE #1
+A* 709
+BFS 710
+Dijkstra 657
+Greedy 71
+
+INSTANCE #2
+A* 709
+BFS 710
+Dijkstra 657
+Greedy 80
+
+INSTANCE #3
+A* 709
+BFS 710
+Dijkstra 657
+Greedy 108
+
+INSTANCE #4
+A* 709
+BFS 710
+Dijkstra 657
+Greedy 144
+
+INSTANCE #5
+A* 709
+BFS 710
+Dijkstra 657
+Greedy 167
+
+INSTANCE #6
+A* 709
+BFS 710
+Dijkstra 657
+Greedy 174
+
+INSTANCE #7
+A* 709
+BFS 710
+Dijkstra 657
+Greedy 188
+
+INSTANCE #8
+A* 709
+BFS 710
+Dijkstra 657
+Greedy 238
+
+INSTANCE #9
+A* 709
+BFS 710
+Dijkstra 657
+Greedy 241
+
+INSTANCE #10
+A* 709
+BFS 710
+Dijkstra 674
+Greedy 260
+
+INSTANCE #11
+A* 710
+BFS 710
+Dijkstra 674
+Greedy 275
+
+INSTANCE #12
+A* 710
+BFS 710
+Dijkstra 674
+Greedy 288
+
+INSTANCE #13
+A* 710
+BFS 710
+Dijkstra 674
+Greedy 299
+
+INSTANCE #14
+A* 710
+BFS 710
+Dijkstra 674
+Greedy 299
+
+INSTANCE #15
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 311
+
+INSTANCE #16
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 311
+
+INSTANCE #17
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 324
+
+INSTANCE #18
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 329
+
+INSTANCE #19
+A* 710
+BFS 710
+Dijkstra 710
+Greedy 343
+
