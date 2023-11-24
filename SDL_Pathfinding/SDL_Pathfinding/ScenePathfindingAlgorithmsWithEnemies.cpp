@@ -74,6 +74,22 @@ void ScenePathfindingAlgorithmsWithEnemies::update(float dtime, SDL_Event* event
 			//A*
 			PC->SetAlgorithmToAStar();
 			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
+			//enemy
+			// If it exited due to an enemyClose, recalculate heuristics of nodes close to the enemy
+			if (newPath == nullptr)
+			{
+				// Find the node close to the enemy and set enemyClose to true
+				Node* enemyCloseNode = graph->GetNodeCloseToEnemy(agentPositionID);
+
+				if (enemyCloseNode != nullptr)
+					enemyCloseNode->enemyClose = true;
+			}
+
+			// Recalculate path using the current node as the origin
+			newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
+
+
+
 			for (int i = 0; i < newPath->points.size(); i++)
 			{
 				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));

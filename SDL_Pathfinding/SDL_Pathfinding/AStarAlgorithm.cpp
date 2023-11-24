@@ -26,6 +26,26 @@ Path* AStarAlgorithm::FindPath(Graph* graph, Node* origin, Node* goal)
 
         visited[current->GetId()] = true;
 
+        // Check if an enemy is close to the current node
+        if (current->enemyClose)
+        {
+            // Construct the path until now and return it
+            Path* path = new Path;
+            Node* currentNode = current;
+
+            // Backtrack from the current node to the origin using parentMap
+            while (currentNode != nullptr)
+            {
+                path->points.insert(path->points.begin(), currentNode->GetCell());
+                currentNode = parentMap[currentNode];
+            }
+
+            std::cout << "Explored nodes: " << visited.size() << std::endl;
+
+            return path;
+        }
+
+
         // If the goal node is reached, construct the path and return it
         if (current->GetCell() == goal->GetCell())
         {

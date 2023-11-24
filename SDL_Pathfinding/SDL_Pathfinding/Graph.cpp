@@ -207,6 +207,44 @@ std::string Graph::GetRandomNodeID()
 	return unavailableNames[index];
 }
 
+
+
+Node* Graph::GetNodeCloseToEnemy(const std::string& enemyNodeID)
+{
+	Node* enemyNode = GetNodeFromId(enemyNodeID).second;
+
+	if (enemyNode == nullptr)
+		return nullptr;
+
+	Node* closestNode = nullptr;
+	float closestDistance = std::numeric_limits<float>::infinity(); // Initialize to positive infinity
+
+
+	for (const auto& nodePair : nodes)
+	{
+		Node* current = nodePair.second;
+
+		// Skip the enemy node itself
+		if (current->GetId() == enemyNodeID)
+			continue;
+
+		// Calculate the Manhattan distance between nodes
+		float distance = std::abs(current->GetCell().x - enemyNode->GetCell().x) +
+			std::abs(current->GetCell().y - enemyNode->GetCell().y);
+
+		// Check if the current node is closer than the previous closest
+		if (distance < closestDistance)
+		{
+			closestDistance = distance;
+			closestNode = current;
+		}
+	}
+
+	return closestNode;
+}
+
+
+
 std::vector<Connection*> Graph::InitializeConnections(std::map<std::pair<std::string, std::string>, int> connectionsInfo)
 {
 	std::vector<Connection*> returnedConnections;

@@ -6,6 +6,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <limits>
 
 class Graph
 {
@@ -20,6 +21,9 @@ public:
 	Vector2D CellToPix(Vector2D cell);
 	std::pair<std::string, Node*> GetRandomNodeWithID();
 	std::string GetRandomNodeID();
+
+	Node* GetNodeCloseToEnemy(const std::string& enemyNodeID);
+
 
 private:
 	std::vector<Connection*> InitializeConnections(std::map<std::pair<std::string, std::string>, int> connectionsInfo);
@@ -45,4 +49,6 @@ private:
 
 	const float MIN_WEIGHT_LOWER_RIGHT = 6.f;
 	const float MAX_WEIGHT_LOWER_RIGHT = 10.f;
+
+
 };
