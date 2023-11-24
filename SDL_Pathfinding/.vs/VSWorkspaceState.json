@@ -3,6 +3,6 @@
     "",
     "\\SDL_Pathfinding"
   ],
-  "SelectedNode": "\\SDL_Pathfinding\\ScenePathfindingAlgorithmsWithEnemies.h",
+  "SelectedNode": "\\SDL_Pathfinding\\Graph.cpp",
   "PreviewInSolutionExplorer": false
 }
