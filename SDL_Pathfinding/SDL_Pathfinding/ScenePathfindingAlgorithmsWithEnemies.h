@@ -38,7 +38,11 @@ private:
 	SDL_Texture* coin_texture;
 	bool loadTextures(char* filename_bg, char* filename_coin);
 	
-	void movementEnemies();
+
+	void movementEnemies1();
+	void movementEnemies2();
 	int agent1PathIndex;
 	int agent2PathIndex;
+
+	float agentPathTimer;
 };
