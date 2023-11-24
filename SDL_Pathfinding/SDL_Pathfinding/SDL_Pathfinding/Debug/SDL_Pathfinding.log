@@ -1,8 +1,14 @@
-﻿  ScenePathfindingAlgorithms.cpp
+﻿  main.cpp
+  ScenePathfindingAlgorithms.cpp
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(85,22): warning C4018: '<': signed/unsigned mismatch
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(96,22): warning C4018: '<': signed/unsigned mismatch
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(107,22): warning C4018: '<': signed/unsigned mismatch
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(118,22): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
+  SceneTSP.cpp
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\SceneTSP.cpp(85,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\SceneTSP.cpp(96,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\SceneTSP.cpp(107,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\SceneTSP.cpp(118,22): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
+  LINK : C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\\bin\SDL_Pathfinding.exe not found or not built by the last incremental link; performing full link
   SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe

@@ -96,6 +96,9 @@
     <ClCompile Include="ScenePathfindingAlgorithmsWithEnemies.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SceneTSP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Agent.h">
@@ -192,6 +195,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ScenePathfindingAlgorithmsWithEnemies.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneTSP.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
