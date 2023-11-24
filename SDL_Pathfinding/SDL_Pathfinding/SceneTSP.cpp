@@ -25,6 +25,7 @@ SceneTSP::SceneTSP()
 	{
 		coinPositionIDs.push_back(graph->GetRandomNodeID());
 		coinPositions.push_back(graph->GetNodeFromId(coinPositionIDs[i]).second->GetCell());
+		activeCoins[coinPositionIDs[i]] = true;
 	}
 
 	PC->SetAlgorithmToAStar();
@@ -77,6 +78,14 @@ void SceneTSP::update(float dtime, SDL_Event* event)
 	}
 
 	agents[0]->update(dtime, event);
+
+	//Set the "taken" coin to unactive
+	/*
+	if ((agents[0]->getCurrentTargetIndex() == -1) && (maze->pix2cell(agents[0]->getPosition()) == graph->GetNodeFromId(closestNodeID).second->GetCell()))
+	{
+		activeCoins[closestNodeID] = false;
+	}
+	*/
 
 }
 
@@ -135,12 +144,15 @@ void SceneTSP::drawMaze()
 
 void SceneTSP::drawCoins()
 {
-	for(int i = 0; i < coinPositions.size(); i++)
+	for(std::map<std::string, bool>::iterator it = activeCoins.begin(); it != activeCoins.end(); it++)
 	{
-		Vector2D coin_coords = maze->cell2pix(coinPositions[i]);
-		int offset = CELL_SIZE / 2;
-		SDL_Rect dstrect = { (int)coin_coords.x - offset, (int)coin_coords.y - offset, CELL_SIZE, CELL_SIZE };
-		SDL_RenderCopy(TheApp::Instance()->getRenderer(), coin_texture, NULL, &dstrect);
+		if (it->second)
+		{
+			Vector2D coin_coords = maze->cell2pix(graph->GetNodeFromId(it->first).second->GetCell());
+			int offset = CELL_SIZE / 2;
+			SDL_Rect dstrect = { (int)coin_coords.x - offset, (int)coin_coords.y - offset, CELL_SIZE, CELL_SIZE };
+			SDL_RenderCopy(TheApp::Instance()->getRenderer(), coin_texture, NULL, &dstrect);
+		}
 	}
 }
 

@@ -28,6 +28,7 @@ private:
 
 	Grid* maze;
 	bool draw_grid;
+	std::map<std::string, bool> activeCoins;
 
 	Graph* graph;
 	std::string agentPositionID;
