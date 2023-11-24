@@ -81,10 +81,10 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 		{
 			//A*
 			PC->SetAlgorithmToAStar();
-			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
-			for (int i = 0; i < newPath->points.size(); i++)
+			path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
+			for (int i = 0; i < path->points.size(); i++)
 			{
-				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));
+				agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
 			}
 		}
 
@@ -92,10 +92,10 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 		{
 			//BFS
 			PC->SetAlgorithmToBFS();
-			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
-			for (int i = 0; i < newPath->points.size(); i++)
+			path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
+			for (int i = 0; i < path->points.size(); i++)
 			{
-				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));
+				agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
 			}
 		}
 
@@ -103,10 +103,10 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 		{
 			//Dijkstra
 			PC->SetAlgorithmToDijkstra();
-			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
-			for (int i = 0; i < newPath->points.size(); i++)
+			path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
+			for (int i = 0; i < path->points.size(); i++)
 			{
-				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));
+				agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
 			}
 		}
 
@@ -114,10 +114,10 @@ void ScenePathfindingAlgorithms::update(float dtime, SDL_Event* event)
 		{
 			//Greedy
 			PC->SetAlgorithmToGreedy();
-			Path* newPath = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
-			for (int i = 0; i < newPath->points.size(); i++)
+			path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
+			for (int i = 0; i < path->points.size(); i++)
 			{
-				agents[0]->addPathPoint(graph->CellToPix(newPath->points[i]));
+				agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
 			}
 		}
 		break;

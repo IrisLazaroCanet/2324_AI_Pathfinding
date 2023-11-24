@@ -31,6 +31,8 @@ private:
 	Graph* graph;
 	std::string agentPositionID;
 	std::string coinPositionID;
+
+	Path* path;
 	
 	void drawMaze();
 	void drawCoin();

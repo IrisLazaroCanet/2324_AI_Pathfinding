@@ -1,45 +1,8 @@
-﻿  AStarAlgorithm.cpp
-  BFSAlgorithm.cpp
-  DijkstraAlgorithm.cpp
-  Graph.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(30,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(32,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(38,40): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(38,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(55,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(68,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(80,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(90,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(116,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(128,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(130,21): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(142,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(152,44): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(294,10): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(295,10): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(300,10): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(301,10): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(306,10): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(307,10): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(312,10): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(313,10): warning C4244: '=': conversion from 'const float' to 'int', possible loss of data
-  GreedyAlgorithm.cpp
-  PathCalculator.cpp
-  PathfindingProblem.cpp
-  SceneAlgorithmComparison.cpp
-  ScenePathfindingAlgorithms.cpp
+﻿  ScenePathfindingAlgorithms.cpp
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(85,22): warning C4018: '<': signed/unsigned mismatch
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(96,22): warning C4018: '<': signed/unsigned mismatch
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(107,22): warning C4018: '<': signed/unsigned mismatch
 C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithms.cpp(118,22): warning C4018: '<': signed/unsigned mismatch
-  ScenePathfindingAlgorithmsWithEnemies.cpp
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(47,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(82,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(93,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(104,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\ScenePathfindingAlgorithmsWithEnemies.cpp(115,22): warning C4018: '<': signed/unsigned mismatch
   main.cpp
   Generating Code...
-C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\SDL_Pathfinding\Graph.cpp(284): warning C4715: 'Graph::CalculateZoneFromPoint': not all control paths return a value
   SDL_Pathfinding.vcxproj -> C:\Users\irisl\Desktop\ENTI\3r CDI\1r Semestre\Tècniques d'Intel·ligència Artificial\AA3\2324_AI_Pathfinding\SDL_Pathfinding\bin\SDL_Pathfinding.exe
