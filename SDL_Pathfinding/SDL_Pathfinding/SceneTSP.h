@@ -23,20 +23,25 @@ public:
 
 private:
 	std::vector<Agent*> agents;
-	Vector2D coinPosition;
+	std::vector<Vector2D> coinPositions;
+	const float NUM_LOCATIONS = 5;
 
 	Grid* maze;
 	bool draw_grid;
 
 	Graph* graph;
 	std::string agentPositionID;
-	std::string coinPositionID;
+	std::vector<std::string> coinPositionIDs;
+	std::string closestNodeID;
 
 	Path* path;
 
+
 	void drawMaze();
-	void drawCoin();
+	void drawCoins();
 	SDL_Texture* background_texture;
 	SDL_Texture* coin_texture;
 	bool loadTextures(char* filename_bg, char* filename_coin);
+
+	std::string FindClosestNodeID(std::string originID);
 };

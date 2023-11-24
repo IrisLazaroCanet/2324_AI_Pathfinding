@@ -16,43 +16,19 @@ SceneTSP::SceneTSP()
 	agent->setTarget(Vector2D(-20, -20));
 	agents.push_back(agent);
 
-	// set agent position coords to the center of a random cell
-	/*
-	Vector2D rand_cell(-1, -1);
-	while (!maze->isValidCell(rand_cell))
-		rand_cell = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-	agents[0]->setPosition(maze->cell2pix(rand_cell));
-	*/
-
-	//Set agent position as random node
-	/*
-	agentPositionNodeWithID = graph->GetRandomNodeWithID();
-	agents[0]->setPosition(graph->CellToPix(
-		agentPositionNodeWithID.second->GetCell())
-	);
-	*/
-
 	agentPositionID = graph->GetRandomNodeID();
 	agents[0]->setPosition(graph->CellToPix(
 		graph->GetNodeFromId(agentPositionID).second->GetCell()
 	));
 
-	//Set the coin position as random node
-	/*
-	coinPositionNodeWithID = graph->GetRandomNodeWithID();
-	coinPosition = coinPositionNodeWithID.second->GetCell();
-	*/
+	for (int i = 0; i < NUM_LOCATIONS; i++)
+	{
+		coinPositionIDs.push_back(graph->GetRandomNodeID());
+		coinPositions.push_back(graph->GetNodeFromId(coinPositionIDs[i]).second->GetCell());
+	}
 
-	coinPositionID = graph->GetRandomNodeID();
-	coinPosition = graph->GetNodeFromId(coinPositionID).second->GetCell();
-
-	// set the coin in a random cell (but at least 3 cells far from the agent)
-	/*
-	coinPosition = Vector2D(-1, -1);
-	while ((!maze->isValidCell(coinPosition)) || (Vector2D::Distance(coinPosition, rand_cell) < 3))
-		coinPosition = Vector2D((float)(rand() % maze->getNumCellX()), (float)(rand() % maze->getNumCellY()));
-	*/
-
+	PC->SetAlgorithmToAStar();
+	HC->SetFunctionToManhattan();
 }
 
 SceneTSP::~SceneTSP()
@@ -77,70 +53,35 @@ void SceneTSP::update(float dtime, SDL_Event* event)
 		if (event->key.keysym.scancode == SDL_SCANCODE_SPACE)
 			draw_grid = !draw_grid;
 
-		if (event->key.keysym.scancode == SDL_SCANCODE_A)
-		{
-			//A*
-			PC->SetAlgorithmToAStar();
-			path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
-			for (int i = 0; i < path->points.size(); i++)
-			{
-				agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
-			}
-		}
-
-		if (event->key.keysym.scancode == SDL_SCANCODE_B)
-		{
-			//BFS
-			PC->SetAlgorithmToBFS();
-			path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
-			for (int i = 0; i < path->points.size(); i++)
-			{
-				agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
-			}
-		}
-
-		if (event->key.keysym.scancode == SDL_SCANCODE_D)
-		{
-			//Dijkstra
-			PC->SetAlgorithmToDijkstra();
-			path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
-			for (int i = 0; i < path->points.size(); i++)
-			{
-				agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
-			}
-		}
-
-		if (event->key.keysym.scancode == SDL_SCANCODE_G)
-		{
-			//Greedy
-			PC->SetAlgorithmToGreedy();
-			path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(coinPositionID).second);
-			for (int i = 0; i < path->points.size(); i++)
-			{
-				agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
-			}
-		}
 		break;
 	}
 	default:
 		break;
 	}
 
-	agents[0]->update(dtime, event);
 
-	//If we have arrived to the coin, reset the agent's position	
-	if ((agents[0]->getCurrentTargetIndex() == -1) && (maze->pix2cell(agents[0]->getPosition()) == coinPosition))
+	while (!coinPositionIDs.empty())
 	{
-		agents[0]->setPosition(graph->CellToPix(
-			graph->GetNodeFromId(agentPositionID).second->GetCell()
-		));
+		//Calculate closest node
+		closestNodeID = FindClosestNodeID(agentPositionID);
+		//Calculate path to the closest node
+		path = PC->FindPath(graph, graph->GetNodeFromId(agentPositionID).second, graph->GetNodeFromId(closestNodeID).second);
+		for (int i = 0; i < path->points.size(); i++)
+		{
+			agents[0]->addPathPoint(graph->CellToPix(path->points[i]));
+		}
+
+		agents[0]->update(dtime, event);
+
+		//When the agent has arrived to the goal, update its ID to match the goal's
+		agentPositionID = closestNodeID;
 	}
 }
 
 void SceneTSP::draw()
 {
 	drawMaze();
-	drawCoin();
+	drawCoins();
 
 	if (draw_grid)
 	{
@@ -190,12 +131,15 @@ void SceneTSP::drawMaze()
 	//SDL_RenderCopy(TheApp::Instance()->getRenderer(), background_texture, NULL, NULL );
 }
 
-void SceneTSP::drawCoin()
+void SceneTSP::drawCoins()
 {
-	Vector2D coin_coords = maze->cell2pix(coinPosition);
-	int offset = CELL_SIZE / 2;
-	SDL_Rect dstrect = { (int)coin_coords.x - offset, (int)coin_coords.y - offset, CELL_SIZE, CELL_SIZE };
-	SDL_RenderCopy(TheApp::Instance()->getRenderer(), coin_texture, NULL, &dstrect);
+	for(int i = 0; i < coinPositions.size(); i++)
+	{
+		Vector2D coin_coords = maze->cell2pix(coinPositions[i]);
+		int offset = CELL_SIZE / 2;
+		SDL_Rect dstrect = { (int)coin_coords.x - offset, (int)coin_coords.y - offset, CELL_SIZE, CELL_SIZE };
+		SDL_RenderCopy(TheApp::Instance()->getRenderer(), coin_texture, NULL, &dstrect);
+	}
 }
 
 bool SceneTSP::loadTextures(char* filename_bg, char* filename_coin)
@@ -221,4 +165,35 @@ bool SceneTSP::loadTextures(char* filename_bg, char* filename_coin)
 		SDL_FreeSurface(image);
 
 	return true;
+}
+
+std::string SceneTSP::FindClosestNodeID(std::string originID)
+{
+	float shortestDistance = -1.f;
+	float calculatedDistance = -1.f;
+	std::string closestNodeID;
+	int closestNodeIndex = 0;
+
+	for (int i = 0; i < coinPositionIDs.size(); i++)
+	{
+		calculatedDistance = HC->CalculateHeuristic(
+			graph->GetNodeFromId(originID).second->GetCell(),
+			graph->GetNodeFromId(coinPositionIDs[i]).second->GetCell()
+		);
+
+		if (i == 0)
+		{
+			shortestDistance = calculatedDistance;
+			closestNodeID = coinPositionIDs[i];
+		}
+		else if (calculatedDistance < shortestDistance)
+		{
+			shortestDistance = calculatedDistance;
+			closestNodeID = coinPositionIDs[i];
+			closestNodeIndex = i;
+		}
+	}
+
+	coinPositionIDs.erase(coinPositionIDs.begin() + closestNodeIndex);
+	return closestNodeID;
 }
